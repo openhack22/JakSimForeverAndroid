@@ -1,5 +1,7 @@
-﻿서버에서 수신받는 데이터 형식 : JSON
+﻿*** 서버에서 수신받는 데이터 형식
+-> JSON
 
+*** 액티비티 이름 정의
 스플래쉬 : SplashActivity
 로그인 : LoginActivity
 회원가입 : JoinActivity
@@ -10,3 +12,11 @@
 방 시작 : RoomActivity
 Progress Bar 선택 시 나오는 액티비티 : RoomHistoryActivity
 시상 : AwardActivity
+
+*** LoginActivity
+url : http://~/login
+json data
+send
+--> {"id" : "아이디"}, {"password" : "패스워드"}
+receive
+--> {"username" : "닉네임"}
