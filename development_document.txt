@@ -1,0 +1,12 @@
+﻿서버에서 수신받는 데이터 형식 : JSON
+
+스플래쉬 : SplashActivity
+로그인 : LoginActivity
+회원가입 : JoinActivity
+메인 : MainActivity
+리스트 : RoomListActivity
+방 추가 : AddRoomActivity
+대기 방 : WaitingRoomActivity
+방 시작 : RoomActivity
+Progress Bar 선택 시 나오는 액티비티 : RoomHistoryActivity
+시상 : AwardActivity
