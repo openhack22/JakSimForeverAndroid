@@ -46,7 +46,7 @@
             android:layout_height="@dimen/LoginEditTextHeight"
             android:imeOptions="actionNext"
             android:fontFamily="@font/notosansbold"
-            android:inputType="textPassword"
+            android:inputType="textNoSuggestions"
             android:paddingLeft="10dp"
             />
 
@@ -56,7 +56,7 @@
             android:layout_height="@dimen/LoginEditTextHeight"
             android:imeOptions="actionNext"
             android:fontFamily="@font/notosansbold"
-            android:inputType="textPassword"
+            android:inputType="textNoSuggestions"
             android:paddingLeft="10dp"
             />
 
