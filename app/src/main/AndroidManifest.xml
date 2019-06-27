@@ -26,6 +26,8 @@
             android:theme="@style/NoTheme"></activity>
         <activity android:name=".RoomActivity"
             android:theme="@style/NoTheme"></activity>
+        <activity android:name=".AwardActivity"
+            android:theme="@style/NoTheme"></activity>
     </application>
 
 </manifest>
