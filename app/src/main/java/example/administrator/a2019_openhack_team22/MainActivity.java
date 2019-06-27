@@ -68,8 +68,6 @@ public class MainActivity extends FontActivity {
                 intent.putExtra("id", strId);
                 intent.putExtra("username", strUserName);
                 startActivity(intent);
-                // Intent intent = new Intent(MainActivity.this, RoomListActivity.class);
-                // startActivity(intent);	//새로운 액티비티를 화면에 출력
             }
         });
     }

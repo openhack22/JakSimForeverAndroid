@@ -73,17 +73,5 @@ public class RoomActivity extends AppCompatActivity {
         });
 
 
-//        // 3초 후에 award 액티비티로 전환
-//        new Handler().postDelayed(new Runnable() {// 3 초 후에 실행
-//            @Override
-//            public void run() {
-//                // 실행할 동작 코딩
-//                Intent intent = new Intent(RoomActivity.this, AwardActivity.class);
-//                startActivity(intent);	//새로운 액티비티를 화면에 출력
-//
-////
-////                mHandler.sendEmptyMessage(0);	// 실행이 끝난후 알림
-//            }
-//        }, 3000);
     }
 }
