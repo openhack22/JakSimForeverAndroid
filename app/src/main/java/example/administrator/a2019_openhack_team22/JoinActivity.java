@@ -81,11 +81,10 @@ public class JoinActivity extends AppCompatActivity {
                     case MotionEvent.ACTION_DOWN:   // 클릭 시
                         if(checkUserInfo()) {
                             if(checkCardInfo()) {
-
-                                // setResult(RESULT_OK, intent);
+                                cancelAsyncTask(joinAsyncTask);
+                                joinAsyncTask.execute("/join", "join");
                             }
                         }
-
                         break;
                 }
                 return true;
@@ -99,6 +98,7 @@ public class JoinActivity extends AppCompatActivity {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:   // 클릭 시
                         hasCheckID = false;
+                        cancelAsyncTask(joinAsyncTask);
                         joinAsyncTask.execute("/checkID", "checkID");
                         break;
                 }
@@ -113,6 +113,7 @@ public class JoinActivity extends AppCompatActivity {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:   // 클릭 시
                         hasCheckUsername = false;
+                        cancelAsyncTask(joinAsyncTask);
                         joinAsyncTask.execute("/checkUsername", "checkUsername");
                         break;
                 }
@@ -324,5 +325,14 @@ public class JoinActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /*
+    AsyncTask 실행 여부 체크해서 종료시키기
+     */
+    private void cancelAsyncTask(JoinAsyncTask joinAsyncTask) {
+        if(joinAsyncTask.getStatus() == AsyncTask.Status.RUNNING) {
+            joinAsyncTask.cancel(true);
+        }
     }
 }

@@ -25,6 +25,7 @@
                 android:layout_height="@dimen/LoginEditTextHeight"
                 android:imeOptions="actionNext"
                 android:inputType="textNoSuggestions"
+                android:fontFamily="@font/notosansbold"
                 android:paddingLeft="10dp"
                 />
             <ImageView
@@ -33,6 +34,7 @@
                 android:layout_height="@dimen/checkBtnHeight"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
+                android:background="@color/colorPrimaryDark"
                 app:layout_constraintDimensionRatio="1:1"
                 />
 
@@ -43,6 +45,7 @@
             android:layout_width="@dimen/LoginEditTextWidth"
             android:layout_height="@dimen/LoginEditTextHeight"
             android:imeOptions="actionNext"
+            android:fontFamily="@font/notosansbold"
             android:inputType="textNoSuggestions"
             android:paddingLeft="10dp"
             />
@@ -52,6 +55,7 @@
             android:layout_width="@dimen/LoginEditTextWidth"
             android:layout_height="@dimen/LoginEditTextHeight"
             android:imeOptions="actionNext"
+            android:fontFamily="@font/notosansbold"
             android:inputType="textNoSuggestions"
             android:paddingLeft="10dp"
             />
@@ -66,6 +70,7 @@
                 android:layout_width="@dimen/LoginEditTextWidth"
                 android:layout_height="@dimen/LoginEditTextHeight"
                 android:imeOptions="actionNext"
+                android:fontFamily="@font/notosansbold"
                 android:inputType="textNoSuggestions"
                 android:paddingLeft="10dp"
                 />
@@ -75,6 +80,7 @@
                 android:layout_height="@dimen/checkBtnHeight"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
+                android:background="@color/colorPrimary"
                 app:layout_constraintDimensionRatio="1:1"
                 />
         </LinearLayout>
@@ -90,6 +96,7 @@
         <EditText
             android:id="@+id/editTextBank"
             android:layout_width="match_parent"
+            android:fontFamily="@font/notosansbold"
             android:layout_height="30dp"
             android:imeOptions="actionNext"
             android:inputType="textNoSuggestions"
@@ -109,6 +116,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="textNoSuggestions"
                 android:paddingLeft="10dp"
+                android:fontFamily="@font/notosansbold"
                 />
 
             <EditText
@@ -119,6 +127,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="textNoSuggestions"
                 android:paddingLeft="10dp"
+                android:fontFamily="@font/notosansbold"
                 />
 
             <EditText
@@ -129,6 +138,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="textNoSuggestions"
                 android:paddingLeft="10dp"
+                android:fontFamily="@font/notosansbold"
                 />
 
             <EditText
@@ -139,6 +149,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="textNoSuggestions"
                 android:paddingLeft="10dp"
+                android:fontFamily="@font/notosansbold"
                 />
         </LinearLayout>
         <EditText
@@ -148,6 +159,7 @@
             android:imeOptions="actionNext"
             android:inputType="textNoSuggestions"
             android:paddingLeft="10dp"
+            android:fontFamily="@font/notosansbold"
             />
 
         <LinearLayout
@@ -164,6 +176,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="textNoSuggestions"
                 android:paddingLeft="10dp"
+                android:fontFamily="@font/notosansbold"
                 />
 
             <EditText
@@ -174,6 +187,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="textNoSuggestions"
                 android:paddingLeft="10dp"
+                android:fontFamily="@font/notosansbold"
                 />
 
             <EditText
@@ -184,6 +198,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="textNoSuggestions"
                 android:paddingLeft="10dp"
+                android:fontFamily="@font/notosansbold"
                 />
         </LinearLayout>
         <EditText
@@ -193,6 +208,7 @@
             android:imeOptions="actionNext"
             android:inputType="textNoSuggestions"
             android:paddingLeft="10dp"
+            android:fontFamily="@font/notosansbold"
             />
     </LinearLayout>
 
@@ -203,5 +219,6 @@
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
+        android:background="@color/colorPrimaryDark"
         />
 </LinearLayout>

@@ -13,4 +13,6 @@
     <dimen name="checkBtnHeight">30dp</dimen>
     <dimen name="cardLayoutMargin">10dp</dimen>
 
+    <!-- AddRoomActivity -->
+    <dimen name="addRoomLayoutMargin">10dp</dimen>
 </resources>

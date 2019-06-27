@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- LoginActivity -->
     <dimen name="LoginLogoHeight">200dp</dimen>
     <dimen name="LoginEditTextHeight">200dp</dimen>
@@ -8,5 +7,12 @@
     <dimen name="LoginBtnHeight">50dp</dimen>
     <dimen name="JoinBtnHeight">50dp</dimen>
 
+    <!-- JoinActivity -->
+    <dimen name="joinLayoutMargin">10dp</dimen>
+    <dimen name="checkBtnHeight">30dp</dimen>
+    <dimen name="cardLayoutMargin">10dp</dimen>
+
+    <!-- AddRoomActivity -->
+    <dimen name="addRoomLayoutMargin">10dp</dimen>
 
 </resources>

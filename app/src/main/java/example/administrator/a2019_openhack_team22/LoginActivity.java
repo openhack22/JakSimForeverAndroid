@@ -70,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                         else if(pwd.equals(null))
                             Log.d(TAG, "id 공백");
                         else {
+                            cancelAsyncTask(loginAsyncTask);
                             loginAsyncTask.execute("/login");
                         }
                         break;
@@ -211,6 +212,12 @@ public class LoginActivity extends AppCompatActivity {
         byteData = baos.toByteArray();
         String response = new String(byteData);
         Log.d(TAG, "응답 코드 발생! 오류 내용 = " + response);
+    }
+
+    private void cancelAsyncTask(LoginAsyncTask loginAsyncTask) {
+        if(loginAsyncTask.getStatus() == AsyncTask.Status.RUNNING) {
+            loginAsyncTask.cancel(true);
+        }
     }
 
     @Override

@@ -26,6 +26,7 @@
             android:imeOptions="actionNext"
             android:inputType="textNoSuggestions"
             android:paddingLeft="10dp"
+            android:fontFamily="@font/notosansbold"
             />
 
         <EditText
@@ -35,15 +36,17 @@
             android:imeOptions="actionNext"
             android:inputType="textNoSuggestions"
             android:paddingLeft="10dp"
+            android:fontFamily="@font/notosansbold"
             />
 
         <ImageView
-            android:id="@+id/LoginBtn"
+            android:id="@+id/loginBtn"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/JoinBtnHeight"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="1:1"
+            android:background="@color/colorPrimary"
             />
 
         <ImageView
@@ -52,6 +55,7 @@
             android:layout_height="@dimen/JoinBtnHeight"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
+            android:background="@color/colorPrimaryDark"
             app:layout_constraintDimensionRatio="1:1"
             />
 
