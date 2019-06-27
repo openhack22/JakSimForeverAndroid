@@ -14,10 +14,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="29" />
-                            <entry key="outputName" value="award_gettrophy" />
+                            <entry key="height" value="65" />
+                            <entry key="outputName" value="room_calendar" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\Administrator\Desktop\openhack\award\award_gettrophy.svg" />
+                            <entry key="sourceFile" value="C:\Users\Administrator\Desktop\openhack\room\room_calendar.svg" />
+                            <entry key="width" value="65" />
                           </map>
                         </option>
                       </PersistentState>

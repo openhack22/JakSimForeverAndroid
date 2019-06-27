@@ -1,118 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
-        android:id="@+id/txt_title"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="목표정보"
-        android:visibility="invisible"
-        android:layout_margin="32dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/txt_user_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txt_title"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="userName"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txt_start_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txt_user_name"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="startDate"/>
-
-    <TextView
-        android:id="@+id/txt_goal_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txt_start_date"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="goalTitle"
-        android:textSize="20sp"/>
-
-    <ImageView
-        android:id="@+id/img_amount"
-        app:layout_constraintTop_toBottomOf="@id/txt_goal_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        />
-
-    <TextView
-        android:id="@+id/txt_amount"
-        app:layout_constraintTop_toBottomOf="@id/img_amount"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="30,000원"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-
-    <ImageView
-        android:id="@+id/img_duration"
-        app:layout_constraintTop_toBottomOf="@id/txt_goal_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/img_amount"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        />
-
-    <TextView
-        android:id="@+id/txt_duration"
-        app:layout_constraintTop_toBottomOf="@id/img_amount"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/txt_amount"
-        android:text="0일"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-
-    <ImageView
-        android:id="@+id/img_user_limit"
-        app:layout_constraintTop_toBottomOf="@id/txt_goal_title"
-        app:layout_constraintStart_toEndOf="@id/img_amount"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        />
-
-    <TextView
-        android:id="@+id/txt_user_limit"
-        app:layout_constraintTop_toBottomOf="@id/img_amount"
-        app:layout_constraintStart_toEndOf="@id/txt_amount"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="0/4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    
-    <TextView
-        android:id="@+id/txt_description"
-        app:layout_constraintTop_toBottomOf="@id/txt_amount"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="textStart"
-        android:text="@string/lorem_ipsum"/>
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        >
 
-    <Button
-        android:id="@+id/btn_join"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="20dp"
-        android:text="참여하기"
-        android:background="@color/colorPrimary"
-        android:textColor="#fff"
+        <TextView
+            android:id="@+id/txt_goal_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="goalTitle"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/txt_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="14dp"
+            android:text="userName"/>
+
+        <TextView
+            android:id="@+id/txt_start_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_user_name"
+            android:textSize="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="1dp"
+            android:textColor="#A0A0A0"
+            android:text="startDate"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="#FFCC33"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0.3"
+            >
+
+            <ImageView
+                android:id="@+id/img_duration"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/room_calendar"
+                app:layout_constraintDimensionRatio="1:1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                />
+
+            <TextView
+                android:id="@+id/txt_duration"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:textSize="11dp"
+                android:text="0일"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0.3"
+            >
+            <ImageView
+                android:id="@+id/img_amount"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/room_money"
+                android:layout_gravity="center"
+                app:layout_constraintDimensionRatio="1:1"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                />
+
+            <TextView
+                android:id="@+id/txt_amount"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:textSize="11dp"
+                android:text="30,000원"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0.3">
+            <ImageView
+                android:id="@+id/img_user_limit"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/room_people"
+                android:layout_gravity="center"
+                app:layout_constraintDimensionRatio="1:1"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                />
+
+            <TextView
+                android:id="@+id/txt_user_limit"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="0/4인"
+                android:layout_marginTop="8dp"
+                android:textSize="11dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#FFCC33"></View>
+
+    <TextView
+        android:id="@+id/txt_description"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/room_textbox"
+        android:padding="10dp"
+        android:text="임시작성"
+        android:textSize="18dp"
+        />
+
+    <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_join"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="30dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/room_participate"
+        app:layout_constraintDimensionRatio="1:1"
+        />
+</LinearLayout>
