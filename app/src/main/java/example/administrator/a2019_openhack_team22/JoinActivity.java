@@ -88,7 +88,11 @@ public class JoinActivity extends FontActivity {
             yearArray.add(String.valueOf(i));
         }
         for(int i = 1; i <= 12; i++) {
-            monthArray.add(String.valueOf(i));
+            if(i < 10) {
+                monthArray.add("0" + String.valueOf(i));
+            }
+            else
+                monthArray.add(String.valueOf(i));
         }
 
 
@@ -134,6 +138,8 @@ public class JoinActivity extends FontActivity {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         day = dayAdapter.getItem(position).toString();
+                        if(Integer.valueOf(day) < 10)
+                            day = "0" + day;
                     }
 
                     @Override
@@ -236,6 +242,7 @@ public class JoinActivity extends FontActivity {
                 cvc = eCVC.getText().toString();
                 cardPwd = eCardPwd.getText().toString();
                 date = year + "-" + month + "-" + day;
+                Log.d(TAG, cardNum + ", " + cvc + ", " + date + ", " + cardPwd + ", " + bank);
                 return true;
             }
         }

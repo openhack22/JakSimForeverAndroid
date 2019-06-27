@@ -29,6 +29,9 @@ send
 --> {"id" : "아이디"}, {"password" : "패스워드"}, {"username" : "닉네임"}
 receive
 --> {"result" : "OK"}
+** 카드 정보 기입 시
+-> {"id" : "아이디"}, {"password" : "패스워드"}, {"username" : "닉네임"}, {"bank", "은행이름"}, {"cardnum" : "카드번호"}, {"cvc" : "cvc번호"}, {"carddue" : "카드만기일(2000-01-30)}, {"cardpassword" : "카드비밀번호"}
+-> {"result" : "OK"}
 
 url : http://~/checkID
 json data
