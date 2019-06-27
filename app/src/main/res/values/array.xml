@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="BankArray">
+        <item>하나은행</item>
+        <item>KB은행</item>
+        <item>국민은행</item>
+        <item>기업은행</item>
+        <item>농협은행</item>
+        <item>축협은행</item>
+        <item>카카오뱅크</item>
+        <item>토스뱅크</item>
+    </string-array>
+</resources>

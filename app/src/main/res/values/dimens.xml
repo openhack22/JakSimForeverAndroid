@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- LoginActivity -->
-    <dimen name="LoginLogoHeight">200dp</dimen>
-    <dimen name="LoginEditTextHeight">200dp</dimen>
-    <dimen name="LoginEditTextWidth">50dp</dimen>
-    <dimen name="LoginBtnHeight">50dp</dimen>
+    <dimen name="LoginLogoHeight">160dp</dimen>
+    <dimen name="LoginEditTextHeight">30dp</dimen>
+    <dimen name="LoginEditTextWidth">260dp</dimen>
+    <dimen name="LoginBtnWidth">270dp</dimen>
     <dimen name="JoinBtnHeight">50dp</dimen>
     <dimen name="LoginBackgroundMarginTop">50dp</dimen>
-    <dimen name="LoginLayoutMargin">10dp</dimen>
+    <dimen name="LoginLayoutMargin">25dp</dimen>
 
     <!-- JoinActivity -->
     <dimen name="joinLayoutMargin">10dp</dimen>
     <dimen name="checkBtnHeight">30dp</dimen>
     <dimen name="cardLayoutMargin">10dp</dimen>
+    <dimen name="cardLayoutWidth">340dp</dimen>
+    <dimen name="cardEditTextHeight">30dp</dimen>
+    <dimen name="JoinUserLayoutMarginTop">40dp</dimen>
+    <dimen name="JoinEditTextWidth">150dp</dimen>
+    <dimen name="JoinPwdEditTextWidth">260dp</dimen>
+    <dimen name="JoinUserTextviewHeight">50dp</dimen>
+    <dimen name="JoinUserTextviewWidth">100dp</dimen>
+
 
     <!-- AddRoomActivity -->
     <dimen name="addRoomLayoutMargin">10dp</dimen>

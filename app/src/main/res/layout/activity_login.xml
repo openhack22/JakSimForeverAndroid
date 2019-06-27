@@ -13,7 +13,7 @@
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:layout_gravity="center"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="180dp"
         app:srcCompat="@drawable/login_logo"
         />
 
@@ -22,11 +22,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/LoginLayoutMargin"
             android:layout_marginRight="@dimen/LoginLayoutMargin"
+            android:layout_marginTop="@dimen/LoginBackgroundMarginTop"
             >
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="450dp"
                 app:layout_constraintDimensionRatio="1:1"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/login_background"
@@ -34,19 +35,20 @@
                 />
 
             <LinearLayout
-                android:layout_marginTop="140dp"
-                android:layout_width="match_parent"
+                android:layout_marginTop="50dp"
+                android:layout_width="@dimen/LoginEditTextWidth"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_gravity="center|top"
+
                 android:orientation="vertical">
 
                 <EditText
                     android:id="@+id/editTextID"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/LoginEditTextWidth"
                     android:layout_height="@dimen/LoginEditTextHeight"
                     android:imeOptions="actionNext"
                     android:inputType="textNoSuggestions"
-                    android:textSize="10dp"
+                    android:textSize="14dp"
                     android:paddingLeft="10dp"
                     android:background="@drawable/login_edittext"
                     android:elevation="5dp"
@@ -57,43 +59,46 @@
 
                 <EditText
                     android:id="@+id/editTextPwd"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/LoginEditTextWidth"
                     android:layout_height="@dimen/LoginEditTextHeight"
                     android:imeOptions="actionNext"
-                    android:inputType="textNoSuggestions"
+                    android:inputType="textPassword"
                     android:paddingLeft="10dp"
                     android:background="@drawable/login_edittext"
-                    android:fontFamily="@font/notosansbold"
                     android:hint="PASSWORD"
-                    android:textSize="10dp"
-                    android:elevation="5dp"
+                    android:textSize="14dp"
                     android:adjustViewBounds="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:scaleType="centerInside"
                     />
 
                 <ImageView
                     android:id="@+id/loginBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/JoinBtnHeight"
+                    android:layout_width="@dimen/LoginBtnWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintDimensionRatio="1:1"
-                    app:srcCompat="@drawable/login_button"
+                    android:scaleType="fitXY"
+                    android:elevation="3dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    app:srcCompat="@drawable/login_btn"
                     />
 
                 <TextView
                     android:id="@+id/joinBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/JoinBtnHeight"
-                    android:layout_gravity="left"
+                    android:layout_gravity="right"
                     android:textAlignment="center"
+                    android:layout_marginTop="15dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
                     app:layout_constraintDimensionRatio="1:1"
                     android:textColor="@color/white"
                     android:text="회원가입"
-                    android:textSize="15dp"
+                    android:textSize="16dp"
                     android:clickable="true"
                     />
 

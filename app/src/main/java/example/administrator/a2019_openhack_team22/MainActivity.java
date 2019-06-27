@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RoomListActivity.class);
                 startActivity(intent);
+                // Intent intent = new Intent(MainActivity.this, RoomListActivity.class);
+                // startActivity(intent);	//새로운 액티비티를 화면에 출력
             }
         });
 

@@ -8,8 +8,11 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -27,6 +30,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 
 /*
 회원가입 기능을 수행하는 액티비티
@@ -37,17 +41,22 @@ public class JoinActivity extends FontActivity {
     String SERVER_URL = "http://10.10.2.88:5000";
 
     EditText eID, ePwd, ePwdReCheck, eUsername;
-    EditText eBank, eCardName1, eCardName2, eCardName3, eCardName4, eCVC;
-    EditText eYear, eMonth, eDay, eCardPwd;
+    EditText eCardName1, eCardName2, eCardName3, eCardName4, eCVC;
+    EditText eCardPwd;
+    Spinner sBank, sYear, sMonth, sDay;
     ImageView ivJoin, ivIdCheckBtn, ivUsernameCheckBtn;
 
     String userID, pwd, pwdReCheck, username;
-    String bank, cardName1, cardName2, cardName3, cardName4;
-    String cvc, year, month, day, cardPwd;
+    String bank, cardNum1, cardNum2, cardNum3, cardNum4, cardNum;
+    String cvc, year, month, day, date, cardPwd;
     Boolean hasCheckID = false;
     Boolean hasCheckUsername = false;
     JoinAsyncTask joinAsyncTask;
 
+    ArrayList<String> yearArray = new ArrayList<>();
+    ArrayList<String> monthArray = new ArrayList<>();
+    ArrayList<String> dayArray = new ArrayList<>();
+    ArrayAdapter bankAdapter, yearAdapter, monthAdapter, dayAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,22 +67,87 @@ public class JoinActivity extends FontActivity {
         ePwd = (EditText) findViewById(R.id.editTextPwd);
         ePwdReCheck = (EditText) findViewById(R.id.editTextPwdReCheck);
         eUsername = (EditText) findViewById(R.id.editTextUsername);
-        eBank = (EditText) findViewById(R.id.editTextBank);
         eCardName1 = (EditText) findViewById(R.id.editTextCardName1);
         eCardName2 = (EditText) findViewById(R.id.editTextCardName2);
         eCardName3 = (EditText) findViewById(R.id.editTextCardName3);
         eCardName4 = (EditText) findViewById(R.id.editTextCardName4);
         eCVC = (EditText) findViewById(R.id.editTextCardCVC);
-        eYear = (EditText) findViewById(R.id.editTextCardDueYear);
-        eMonth = (EditText) findViewById(R.id.editTextCardDueMonth);
-        eDay = (EditText) findViewById(R.id.editTextCardDueDay);
         eCardPwd = (EditText) findViewById(R.id.editTextCardPwd);
+        sBank = (Spinner) findViewById(R.id.bankSpinner);
+        sYear = (Spinner) findViewById(R.id.yearSpinner);
+        sMonth = (Spinner) findViewById(R.id.monthSpinner);
+        sDay = (Spinner) findViewById(R.id.daySpinner);
 
         ivIdCheckBtn = (ImageView) findViewById(R.id.idCheckBtn);
         ivUsernameCheckBtn = (ImageView) findViewById(R.id.usernameCheckBtn);
         ivJoin = (ImageView) findViewById(R.id.joinBtn);
         joinAsyncTask = new JoinAsyncTask();
 
+        // Spinner ArrayList 생성
+        for(int i = 2019; i <= 2029; i++) {
+            yearArray.add(String.valueOf(i));
+        }
+        for(int i = 1; i <= 12; i++) {
+            monthArray.add(String.valueOf(i));
+        }
+
+
+        bankAdapter = ArrayAdapter.createFromResource(this, R.array.BankArray, android.R.layout.simple_spinner_dropdown_item);
+        //  성별 선택 값 가져오기
+        sBank.setAdapter(bankAdapter);
+        yearAdapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, yearArray);
+        monthAdapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, monthArray);
+        sYear.setAdapter(yearAdapter);
+        sMonth.setAdapter(monthAdapter);
+
+        sBank.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bank = bankAdapter.getItem(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                bank = "KB은행";
+            }
+        });
+
+        //  Spinner 선택 값 가져오기
+        sYear.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // 중성화 여부 선택 리스너
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                year = yearAdapter.getItem(position).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        sMonth.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                month = monthAdapter.getItem(position).toString();
+                setDayArray(month);
+                dayAdapter = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, dayArray);
+                sDay.setAdapter(dayAdapter);
+                sDay.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        day = dayAdapter.getItem(position).toString();
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         // 회원가입 버튼 클릭 시
         ivJoin.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -82,6 +156,10 @@ public class JoinActivity extends FontActivity {
                     case MotionEvent.ACTION_DOWN:   // 클릭 시
                         if(checkUserInfo()) {
                             if(checkCardInfo()) {
+                                cancelAsyncTask(joinAsyncTask);
+                                joinAsyncTask.execute("/regist", "joinAndCard");
+                            }
+                            else {
                                 cancelAsyncTask(joinAsyncTask);
                                 joinAsyncTask.execute("/regist", "join");
                             }
@@ -148,7 +226,20 @@ public class JoinActivity extends FontActivity {
     우선 null check만
      */
     private boolean checkCardInfo() {
-        return true;
+        if(checkEditText(eCardName1) && checkEditText(eCardName2) && checkEditText(eCardName3) && checkEditText(eCardName4)) {
+            if(checkEditText(eCVC) && checkEditText(eCardPwd)) {
+                cardNum1 = eCardName1.getText().toString();
+                cardNum2 = eCardName2.getText().toString();
+                cardNum3 = eCardName3.getText().toString();
+                cardNum4 = eCardName4.getText().toString();
+                cardNum = cardNum1 + cardNum2 + cardNum3 + cardNum4;
+                cvc = eCVC.getText().toString();
+                cardPwd = eCardPwd.getText().toString();
+                date = year + "-" + month + "-" + day;
+                return true;
+            }
+        }
+        return false;
     }
 
     /*
@@ -251,7 +342,7 @@ public class JoinActivity extends FontActivity {
             }
             try {
                 JSONObject jsonObject = new JSONObject(str);
-                if(type.equals("join")) {   // 회원가입을 위한 서버 요청인 경우
+                if(type.equals("join") || type.equals("joinAndCard")) {   // 회원가입을 위한 서버 요청인 경우
                     if(jsonObject.get("result") == null)
                         Log.d(TAG, "회원가입 실패! 이유 : result is null");
                     else {  // 회원가입 성공
@@ -318,6 +409,17 @@ public class JoinActivity extends FontActivity {
                 jsonObject.accumulate("password", pwd);
                 jsonObject.accumulate("username", username);
             }
+            else if(type.equals("joinAndCard")) {
+                Log.d(TAG, "bank : " + bank + ", year : " + year + ", month : " + month + ", day : " + day);
+                jsonObject.accumulate("id", userID);
+                jsonObject.accumulate("password", pwd);
+                jsonObject.accumulate("username", username);
+                jsonObject.accumulate("bank", bank);
+                jsonObject.accumulate("cardnum", cardNum);
+                jsonObject.accumulate("cvc", cvc);
+                jsonObject.accumulate("carddue", date);
+                jsonObject.accumulate("cardpassword", cardPwd);
+            }
             else if(type.equals("checkID")) {
                 jsonObject.accumulate("id", userID);
             }
@@ -329,6 +431,41 @@ public class JoinActivity extends FontActivity {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /*
+    날짜 선택. month 값을 받아서.
+     */
+    private void setDayArray(String month) {
+        switch (month) {
+            case "1":
+            case "3":
+            case "5":
+            case "7":
+            case "8":
+            case "10":
+            case "12":
+                dayArray.clear();
+                for(int i = 1; i <= 31; i++) {
+                    dayArray.add(String.valueOf(i));
+                }
+                break;
+            case "4":
+            case "6":
+            case "9":
+            case "11":
+                dayArray.clear();
+                for(int i = 1; i <= 30; i++) {
+                    dayArray.add(String.valueOf(i));
+                }
+                break;
+            case "2":
+                dayArray.clear();
+                for(int i = 1; i <= 28; i++) {
+                    dayArray.add(String.valueOf(i));
+                }
+                break;
+        }
     }
 
     /*
