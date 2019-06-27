@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,6 +19,7 @@ import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
@@ -51,13 +53,16 @@ public class MainActivity extends AppCompatActivity {
         // TODO:참여중인 목표 개수 DB에서 받아와 표시 : numGoal
 
 
-        // '공동목표 참여하기'버튼 클릭하면 리스트화면 들어가기
+        // RoomList액티비티로 넘어가기
         btnJoin.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RoomListActivity.class);
-                startActivity(intent);	//새로운 액티비티를 화면에 출력
+                startActivity(intent);
             }
         });
+
+
     }
 
 
