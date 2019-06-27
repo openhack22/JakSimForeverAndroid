@@ -1,5 +1,6 @@
 package example.administrator.a2019_openhack_team22;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -50,6 +51,14 @@ public class WaitingRoomActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // TODO: 서버 통신 부분 넣어야 함
                 Toast.makeText(WaitingRoomActivity.this, "참여하기 버튼 누름!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // 방 시작 화면으로 전환
+        btnJoin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(WaitingRoomActivity.this, RoomActivity.class);
+                startActivity(intent);	//새로운 액티비티를 화면에 출력
             }
         });
     }

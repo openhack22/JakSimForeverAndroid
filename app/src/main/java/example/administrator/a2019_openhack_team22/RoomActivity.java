@@ -1,5 +1,6 @@
 package example.administrator.a2019_openhack_team22;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -46,11 +47,11 @@ public class RoomActivity extends AppCompatActivity {
 
         btnAuth = findViewById(R.id.btn_auth);
 
+        // 방 시작 화면으로 전환
         btnAuth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //TODO: AuthActivity로 인텐트 넘기는거 필요!
-                Toast.makeText(RoomActivity.this, "인증 버튼 눌림!", Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                Intent intent = new Intent(RoomActivity.this, AuthActivity.class);
+                startActivity(intent);	//새로운 액티비티를 화면에 출력
             }
         });
     }
