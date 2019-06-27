@@ -20,3 +20,25 @@ send
 --> {"id" : "아이디"}, {"password" : "패스워드"}
 receive
 --> {"username" : "닉네임"}
+
+*** JoinActivity
+url : http://~/join
+json data
+send
+--> {"id" : "아이디"}, {"password" : "패스워드"}, {"username" : "닉네임"}
+receive
+--> {"result" : "OK"}
+
+url : http://~/checkID
+json data
+send
+--> {"id" : "아이디"}
+receive
+--> {"result" : "OK"}
+
+url : http://~/checkUsername
+json data
+send
+--> {"username" : "닉네임"}
+receive
+--> {"result" : "OK"}

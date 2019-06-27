@@ -37,20 +37,22 @@
             android:paddingLeft="10dp"
             />
 
-        <Button
-            android:id="@+id/loginBtn"
+        <ImageView
+            android:id="@+id/LoginBtn"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/LoginBtnHeight"
+            android:layout_height="@dimen/JoinBtnHeight"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1"
             />
 
-        <Button
+        <ImageView
             android:id="@+id/joinBtn"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/JoinBtnHeight"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1"
             />
 
     </LinearLayout>
