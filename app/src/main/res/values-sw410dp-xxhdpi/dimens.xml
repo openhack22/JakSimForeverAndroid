@@ -17,9 +17,14 @@
     <dimen name="cardEditTextHeight">35dp</dimen>
     <dimen name="JoinUserLayoutMarginTop">40dp</dimen>
     <dimen name="JoinEditTextWidth">190dp</dimen>
-    <dimen name="JoinPwdEditTextWidth">265dp</dimen>
+    <dimen name="JoinPwdEditTextWidth">278dp</dimen>
     <dimen name="JoinUserTextviewHeight">30dp</dimen>
     <dimen name="JoinUserTextviewWidth">70dp</dimen>
+    <dimen name="JoinMargin">5dp</dimen>
+
     <!-- AddRoomActivity -->
-    <dimen name="addRoomLayoutMargin">10dp</dimen>
+    <dimen name="addRoomLayoutMargin">17dp</dimen>
+
+    <!-- MainActivity -->
+    <dimen name="MainLayoutMargin">10dp</dimen>
 </resources>

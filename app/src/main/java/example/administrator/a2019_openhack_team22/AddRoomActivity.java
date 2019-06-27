@@ -112,7 +112,7 @@ public class AddRoomActivity extends AppCompatActivity {
                 if(money == 0)
                     tvMoney.setText("free");
                 else
-                    tvMoney.setText(String.valueOf(money));
+                    tvMoney.setText(String.valueOf(money) + "원");
             }
             // SeekBar의 움직임이 시작되었을 때 실행
             @Override
@@ -148,57 +148,57 @@ public class AddRoomActivity extends AppCompatActivity {
                 case R.id.sevenDayBtn:
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         duration = 1;
-                        // image.setImageResource();
+                        image.setImageResource(R.drawable.addroom_sevendaybtnclick);
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
-                        // image.setImageResource();
+                        // image.setImageResource(R.drawable.addroom_sevendaybtn);
                     }
                     break;
                 case R.id.oneMonthBtn:
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         duration = 2;
-                        // image.setImageResource();
+                        image.setImageResource(R.drawable.addroom_onemonthbtnclick);
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
-                        // image.setImageResource();
+                        image.setImageResource(R.drawable.addroom_onemonthbtn);
                     }
                     break;
                 case R.id.threeMonthBtn:
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         duration = 3;
-                        // image.setImageResource();
+                        image.setImageResource(R.drawable.addroom_threemonthbtnclick);
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
-                        // image.setImageResource();
+                        image.setImageResource(R.drawable.addroom_threemonthbtn);
                     }
                     break;
                 case R.id.threePeopleBtn:
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         userNum = 1;
-                        // image.setImageResource();
+                        image.setImageResource(R.drawable.addroom_threebtnclick);
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
-                        // image.setImageResource();
+                        image.setImageResource(R.drawable.addroom_threebtn);
                     }
                     break;
                 case R.id.fourPeopleBtn:
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         userNum = 2;
-                        // image.setImageResource();
+                        image.setImageResource(R.drawable.addroom_fourbtnclick);
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
-                        // image.setImageResource();
+                        image.setImageResource(R.drawable.addroom_fourbtn);
                     }
                     break;
                 case R.id.fivePeopleBtn:
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         userNum = 3;
-                        // image.setImageResource();
+                        image.setImageResource(R.drawable.addroom_fivebtnclick);
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
-                        // image.setImageResource();
+                        image.setImageResource(R.drawable.addroom_fivebtn);
                     }
                     break;
                 case R.id.sixPeopleBtn:
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         userNum = 4;
-                        // image.setImageResource();
+                        image.setImageResource(R.drawable.addroom_sixbtnclick);
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
-                        // image.setImageResource();
+                         image.setImageResource(R.drawable.addroom_sixbtn);
                     }
                     break;
                 case R.id.addRoomBtn:

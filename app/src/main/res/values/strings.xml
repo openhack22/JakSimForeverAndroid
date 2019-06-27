@@ -3,4 +3,6 @@
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices laoreet quam. Cras sed lacus sed nisl pulvinar ullamcorper. Suspendisse sodales, urna vitae ultrices lobortis, neque risus ultrices magna, a mattis ex odio ac nisl. Suspendisse at iaculis dui, eu posuere est. In ac augue vel ante placerat interdum. Curabitur a consequat lacus. Proin accumsan diam augue, eu fermentum dui vulputate vel. Quisque eget maximus odio, in mattis velit. Vivamus efficitur ipsum maximus sem eleifend, a rutrum risus bibendum. Nullam at dolor a nunc hendrerit euismod.
     </string>
+
+    <string name="hint">목표 내용을 입력해주세요. \n (목표에 대한 내용 설명, 인증 방법 등)</string>
 </resources>

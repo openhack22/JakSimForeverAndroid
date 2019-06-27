@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"
+            android:theme="@style/NoTheme"
+            ></activity>
         <activity
             android:name=".LoginActivity"
             android:theme="@style/NoTheme">
@@ -26,7 +28,8 @@
             android:theme="@style/NoTheme">
         </activity>
         <activity android:name=".JoinActivity"
-            android:theme="@style/NoTheme"></activity>
+            android:theme="@style/NoTheme">
+        </activity>
         <activity android:name=".WaitingRoomActivity"
             android:theme="@style/NoTheme"></activity>
         <activity android:name=".RoomActivity"

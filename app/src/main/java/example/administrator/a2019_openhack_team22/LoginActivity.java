@@ -96,13 +96,13 @@ public class LoginActivity extends FontActivity {
             }
         });
 
-        Button test = (Button) findViewById(R.id.test);
-        test.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);	//새로운 액티비티를 화면에 출력
-            }
-        });
+//        Button test = (Button) findViewById(R.id.test);
+//        test.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                startActivity(intent);	//새로운 액티비티를 화면에 출력
+//            }
+//        });
     }
 
     public class LoginAsyncTask extends AsyncTask<String, String, String> {

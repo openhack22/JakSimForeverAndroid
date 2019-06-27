@@ -5,47 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="@dimen/addRoomLayoutMargin"
+    android:layout_marginRight="@dimen/addRoomLayoutMargin"
     android:orientation="vertical"
     tools:context=".AddRoomActivity">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="목표이름"
-        android:textColor="@color/colorPrimary"
-        android:textSize="15dp"
-        android:gravity="left"
-        android:layout_gravity="left"
-        />
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="목표이름 : "
+            android:textSize="13dp"
+            android:gravity="left|center"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            />
 
-    <EditText
-        android:id="@+id/editTextGoalName"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:imeOptions="actionNext"
-        android:inputType="textNoSuggestions"
-        android:paddingLeft="10dp"
-        android:fontFamily="@font/notosansbold"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="목표내용"
-        android:textColor="@color/colorPrimary"
-        android:textSize="15dp"
-        android:gravity="left"
-        android:layout_gravity="left"
-        />
+        <EditText
+            android:id="@+id/editTextGoalName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:imeOptions="actionNext"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="10dp"
+            android:layout_gravity="bottom"
+            android:fontFamily="@font/notosansbold"
+            />
+    </LinearLayout>
 
     <EditText
         android:id="@+id/editTextGoalDescription"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:imeOptions="actionNext"
-        android:inputType="textNoSuggestions"
+        android:inputType="textMultiLine|textLongMessage"
         android:paddingLeft="10dp"
+        android:layout_marginTop="20dp"
         android:scrollHorizontally="false"
+        android:textSize="12dp"
+        android:background="@drawable/addroom_background"
+        android:hint="@string/hint"
         android:fontFamily="@font/notosansbold"
         />
 
@@ -53,10 +58,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="기간"
-        android:textColor="@color/colorPrimary"
-        android:textSize="15dp"
+        android:textSize="13dp"
         android:gravity="left"
         android:layout_gravity="left"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,31 +73,33 @@
         <ImageView
             android:id="@+id/sevenDayBtn"
             android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="0.33"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            app:layout_constraintDimensionRatio="1:1"
-
-            />
+            app:srcCompat="@drawable/addroom_sevendaybtn"
+            app:layout_constraintDimensionRatio="1:1" />
 
         <ImageView
             android:id="@+id/oneMonthBtn"
             android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="0.33"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            app:layout_constraintDimensionRatio="1:1"
-            />
+            app:srcCompat="@drawable/addroom_onemonthbtn"
+            app:layout_constraintDimensionRatio="1:1" />
 
         <ImageView
             android:id="@+id/threeMonthBtn"
             android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
+            app:srcCompat="@drawable/addroom_threemonthbtn"
             app:layout_constraintDimensionRatio="1:1"
             />
     </LinearLayout>
@@ -100,8 +108,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="금액"
-        android:textColor="@color/colorPrimary"
-        android:textSize="15dp"
+        android:layout_marginTop="20dp"
+        android:textSize="13dp"
         android:gravity="left"
         android:layout_gravity="left"
         />
@@ -109,13 +117,12 @@
     <SeekBar
         android:id="@+id/moneySeekBar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:splitTrack="false"
-        android:progressDrawable="@drawable/addroom_seekbar_style"
-        android:thumb="@drawable/addroom_seekbar_thumb"
+        android:layout_height="30dp"
         android:max="50"
         android:progress="0"
-        />
+        android:progressDrawable="@drawable/addroom_seekbar_style"
+        android:splitTrack="false"
+        android:thumb="@drawable/addroom_thumb" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -124,25 +131,23 @@
         <TextView
             android:id="@+id/textViewMoney"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="#0000FF"
-            android:textSize="12dp"
+            android:layout_height="match_parent"
             android:fontFamily="@font/notosansbold"
+            android:gravity="center"
             android:text="free"
-            />
+            android:textSize="12dp" />
 
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="인원"
-        android:textColor="@color/colorPrimary"
-        android:textSize="15dp"
-        android:gravity="left"
         android:layout_gravity="left"
-        />
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="left"
+        android:text="인원"
+        android:textSize="13dp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -152,53 +157,60 @@
         <ImageView
             android:id="@+id/threePeopleBtn"
             android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="0.225"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.247"
+            android:layout_marginRight="20dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="1:1"
-
+            app:srcCompat="@drawable/addroom_threebtn"
             />
 
         <ImageView
             android:id="@+id/fourPeopleBtn"
             android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="0.225"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.247"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
+            android:layout_marginRight="20dp"
             app:layout_constraintDimensionRatio="1:1"
+            app:srcCompat="@drawable/addroom_fourbtn"
             />
 
         <ImageView
             android:id="@+id/fivePeopleBtn"
             android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="0.225"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.247"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
+            android:layout_marginRight="20dp"
             app:layout_constraintDimensionRatio="1:1"
+            app:srcCompat="@drawable/addroom_fivebtn"
             />
 
         <ImageView
             android:id="@+id/sixPeopleBtn"
             android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="0.225"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.247"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="1:1"
+            app:srcCompat="@drawable/addroom_sixbtn"
             />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/addRoomBtn"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:layout_gravity="right"
-        android:background="@color/colorPrimary"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/addroom_addroombtn"
         app:layout_constraintDimensionRatio="1:1"
         />
 </LinearLayout>

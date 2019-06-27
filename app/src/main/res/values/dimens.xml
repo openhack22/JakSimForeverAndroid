@@ -20,8 +20,11 @@
     <dimen name="JoinPwdEditTextWidth">260dp</dimen>
     <dimen name="JoinUserTextviewHeight">50dp</dimen>
     <dimen name="JoinUserTextviewWidth">100dp</dimen>
-
+    <dimen name="JoinMargin">8dp</dimen>
 
     <!-- AddRoomActivity -->
     <dimen name="addRoomLayoutMargin">10dp</dimen>
+
+    <!-- MainActivity -->
+    <dimen name="MainLayoutMargin">10dp</dimen>
 </resources>

@@ -41,7 +41,7 @@
                     android:orientation="horizontal"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:layout_margin="10dp"
+                    android:layout_margin="@dimen/JoinMargin"
                     >
                     <TextView
                         android:layout_width="@dimen/JoinUserTextviewWidth"
@@ -79,7 +79,7 @@
                     android:layout_height="@dimen/JoinUserTextviewHeight"
                     android:orientation="horizontal"
                     android:layout_gravity="center"
-                    android:layout_margin="10dp"
+                    android:layout_margin="@dimen/JoinMargin"
                     >
                     <TextView
                         android:layout_width="@dimen/JoinUserTextviewWidth"
@@ -88,11 +88,12 @@
                         android:textSize="13dp"
                         android:gravity="left|center"
                         android:layout_gravity="left"
+                        android:layout_marginLeft="6dp"
                         />
 
                     <EditText
                         android:id="@+id/editTextPwd"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/JoinPwdEditTextWidth"
                         android:layout_height="@dimen/JoinUserTextviewHeight"
                         android:imeOptions="actionNext"
                         android:background="@drawable/join_cardedittext"
@@ -108,15 +109,16 @@
                 android:layout_height="@dimen/JoinUserTextviewHeight"
                 android:orientation="horizontal"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/JoinMargin"
                 >
                 <TextView
                     android:layout_width="@dimen/JoinUserTextviewWidth"
                     android:layout_height="@dimen/JoinUserTextviewHeight"
+                    android:layout_marginLeft="6dp"
                     />
                 <EditText
                     android:id="@+id/editTextPwdReCheck"
-                    android:layout_width="match_parent"
+                    android:layout_width="@dimen/JoinPwdEditTextWidth"
                     android:layout_height="@dimen/JoinUserTextviewHeight"
                     android:imeOptions="actionNext"
                     android:background="@drawable/join_cardedittext"
@@ -195,7 +197,7 @@
                 <TextView
                     android:layout_width="340dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_gravity="center"
                     android:textSize="12dp"
                     android:text="은행"/>
@@ -212,7 +214,7 @@
                 <TextView
                     android:layout_width="@dimen/cardLayoutWidth"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="@dimen/JoinMargin"
                     android:layout_gravity="center"
                     android:textSize="12dp"
                     android:text="카드번호"/>
@@ -278,7 +280,7 @@
                     android:layout_width="@dimen/cardLayoutWidth"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="@dimen/JoinMargin"
                     android:textSize="12dp"
                     android:text="CVC 번호"/>
 
@@ -299,7 +301,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textSize="12dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="@dimen/JoinMargin"
                     android:text="카드만기일"/>
 
                 <LinearLayout
@@ -315,12 +317,11 @@
                         android:id="@+id/yearSpinner"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/cardEditTextHeight"
-                        android:layout_weight="0.45"
-                        android:background="@drawable/join_cardyearspinner"
-                        android:paddingLeft="10dp"
                         android:layout_gravity="center"
                         android:layout_marginRight="10dp"
-                        ></Spinner>
+                        android:layout_weight="0.45"
+                        android:background="@drawable/join_cardyearspinner"
+                        android:paddingLeft="10dp"></Spinner>
 
                     <Spinner
                         android:id="@+id/monthSpinner"
@@ -328,7 +329,7 @@
                         android:layout_height="@dimen/cardEditTextHeight"
                         android:layout_weight="0.25"
                         android:background="@drawable/join_cardyearspinner"
-                        android:paddingLeft="10dp"
+                        android:paddingLeft="5dp"
                         android:layout_gravity="center"
                         android:layout_marginRight="10dp"
                         ></Spinner>
@@ -339,7 +340,7 @@
                         android:layout_height="@dimen/cardEditTextHeight"
                         android:layout_weight="0.25"
                         android:background="@drawable/join_cardyearspinner"
-                        android:paddingLeft="10dp"
+                        android:paddingLeft="5dp"
                         android:layout_gravity="center"
                         ></Spinner>
                 </LinearLayout>
@@ -348,7 +349,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textSize="12dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="@dimen/JoinMargin"
                     android:text="카드비밀번호"/>
                 <EditText
                     android:id="@+id/editTextCardPwd"
