@@ -24,7 +24,7 @@ public class AuthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
 
-        imgShow = (ImageView) findViewById(R.id.imgShow);
+        imgShow = (ImageView) findViewById(R.id.showImg);
         btnAddImg = (ImageView) findViewById(R.id.btnAddImg);
         btnWrite = (ImageView) findViewById(R.id.btnWrite);
         txtShow = (EditText) findViewById(R.id.txtShow);

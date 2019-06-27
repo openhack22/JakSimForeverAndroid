@@ -246,7 +246,7 @@ public class AddRoomActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... strings) {
-            Log.d(TAG, "AddRoomAsyncTask doInBackground");
+            Log.d(TAG, "JoinRoomAsyncTask doInBackground");
             String login_url = SERVER_URL + strings[0];    // URL
             // POST 전송방식을 위한 설정
             HttpURLConnection con = null;

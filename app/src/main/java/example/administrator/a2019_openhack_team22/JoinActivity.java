@@ -76,7 +76,7 @@ public class JoinActivity extends FontActivity {
         sBank = (Spinner) findViewById(R.id.bankSpinner);
         sYear = (Spinner) findViewById(R.id.yearSpinner);
         sMonth = (Spinner) findViewById(R.id.monthSpinner);
-        sDay = (Spinner) findViewById(R.id.daySpinner);
+//        sDay = (Spinner) findViewById(R.id.daySpinner);
 
         ivIdCheckBtn = (ImageView) findViewById(R.id.idCheckBtn);
         ivUsernameCheckBtn = (ImageView) findViewById(R.id.usernameCheckBtn);
@@ -133,20 +133,20 @@ public class JoinActivity extends FontActivity {
                 month = monthAdapter.getItem(position).toString();
                 setDayArray(month);
                 dayAdapter = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, dayArray);
-                sDay.setAdapter(dayAdapter);
-                sDay.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        day = dayAdapter.getItem(position).toString();
-                        if(Integer.valueOf(day) < 10)
-                            day = "0" + day;
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-
-                    }
-                });
+//                sDay.setAdapter(dayAdapter);
+//                sDay.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//                    @Override
+//                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                        day = "01";//dayAdapter.getItem(position).toString();
+//                        if(Integer.valueOf(day) < 10)
+//                            day = "0" + day;
+//                    }
+//
+//                    @Override
+//                    public void onNothingSelected(AdapterView<?> parent) {
+//
+//                    }
+//                });
             }
 
             @Override
@@ -241,7 +241,7 @@ public class JoinActivity extends FontActivity {
                 cardNum = cardNum1 + cardNum2 + cardNum3 + cardNum4;
                 cvc = eCVC.getText().toString();
                 cardPwd = eCardPwd.getText().toString();
-                date = year + "-" + month + "-" + day;
+                date = year + "-" + month + "-" + "01"/*day*/;
                 Log.d(TAG, cardNum + ", " + cvc + ", " + date + ", " + cardPwd + ", " + bank);
                 return true;
             }
@@ -344,7 +344,7 @@ public class JoinActivity extends FontActivity {
 
         @Override
         protected void onPostExecute(String str) {
-            if(str.equals(null)) {
+            if(str == null) {
                 Log.d(TAG, "실패! 수신받은 값 unll");
             }
             try {
@@ -383,6 +383,9 @@ public class JoinActivity extends FontActivity {
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
+            } catch (NullPointerException e){
+                e.printStackTrace();
+                Toast.makeText(JoinActivity.this, "값이 비어있습니다 ㅜㅜ", Toast.LENGTH_SHORT).show();
             }
         }
     }

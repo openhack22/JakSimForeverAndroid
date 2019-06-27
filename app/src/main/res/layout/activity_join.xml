@@ -334,15 +334,15 @@
                         android:layout_marginRight="10dp"
                         ></Spinner>
 
-                    <Spinner
-                        android:id="@+id/daySpinner"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/cardEditTextHeight"
-                        android:layout_weight="0.25"
-                        android:background="@drawable/join_cardyearspinner"
-                        android:paddingLeft="5dp"
-                        android:layout_gravity="center"
-                        ></Spinner>
+                    <!--<Spinner-->
+                        <!--android:id="@+id/daySpinner"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="@dimen/cardEditTextHeight"-->
+                        <!--android:layout_weight="0.25"-->
+                        <!--android:background="@drawable/join_cardyearspinner"-->
+                        <!--android:paddingLeft="5dp"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--&gt;</Spinner>-->
                 </LinearLayout>
                 <TextView
                     android:layout_width="@dimen/cardLayoutWidth"

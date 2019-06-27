@@ -2,13 +2,8 @@ package example.administrator.a2019_openhack_team22;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+import android.os.Handler;
 
 public class SplashActivity extends Activity {
     private Handler mHandler;
@@ -19,9 +14,9 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        ImageView imageView = findViewById(R.id.splash);
-        GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(imageView);
-        Glide.with(this).load(R.drawable.splash).into(gifImage);
+//        ImageView imageView = findViewById(R.id.splash);
+//        GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(imageView);
+//        Glide.with(this).load(R.drawable.splash).into(gifImage);
 
         // MainActivity.class 자리에 다음에 넘어갈 액티비티를 넣어주기
         mRunnable = new Runnable() {
