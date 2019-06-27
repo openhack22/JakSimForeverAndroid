@@ -5,7 +5,6 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,7 +18,6 @@ import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
@@ -31,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
     TextView userName, plusMoney, minusMoney, numGoal;  // 사용자 닉네임, 얻은 돈, 잃은 돈, 참여중인 공동목표
     Button btnJoin; // 공동목표 참여하기 버튼
+    String strUserName, strId;
+    String SERVER_URL = "http://10.10.2.88:5000";
+
+//    LoginAsyncTask loginAsyncTask;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
         // userName login 액티비티에서 받아와 표시 : userName
         Intent intent = getIntent();
-        String username = intent.getStringExtra("username");
-        userName.setText(username);
+        strUserName = intent.getStringExtra("username");
+        strId = intent.getStringExtra("id");
+        userName.setText(strUserName);
 
 
         // TODO:얻은 돈, 잃은 돈 DB에서 받아와 표시 : plusMoney, minusMoney
@@ -61,13 +65,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RoomListActivity.class);
+                intent.putExtra("id", strId);
+                intent.putExtra("username", strUserName);
                 startActivity(intent);
                 // Intent intent = new Intent(MainActivity.this, RoomListActivity.class);
                 // startActivity(intent);	//새로운 액티비티를 화면에 출력
             }
         });
-
-
     }
 
 

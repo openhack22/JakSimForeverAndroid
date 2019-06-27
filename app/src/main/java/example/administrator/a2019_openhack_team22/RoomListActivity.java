@@ -17,10 +17,15 @@ public class RoomListActivity extends AppCompatActivity {
     Button btnSearch, btn1, btn2, btn3, btn4, btn5, btn6, btn7; // 검색할 때 쓰일 버튼들
     EditText editSearch;    // 검색
 
+    String strId, strUserName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roomlist);
+
+        Intent getIntent = getIntent();
+        strId = getIntent.getStringExtra("id");
+        strUserName = getIntent.getStringExtra("username");
 
         // 위젯 연결
         btnAddNew1 = (Button) findViewById(R.id.btnAddNew1);
@@ -84,49 +89,49 @@ public class RoomListActivity extends AppCompatActivity {
         // 검색 버튼 눌렀을 때 일치하는 버튼만 보이도록 함
         btnSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (editSearch.getText().toString() == btn1.getText().toString()) {
+                if (editSearch.getText().toString().equals(btn1.getText().toString())) {
                     btn1.setVisibility(View.VISIBLE);
                 }
                 else {
                     btn1.setVisibility(View.GONE);
                 }
 
-                if (editSearch.getText().toString() == btn2.getText().toString()) {
+                if (editSearch.getText().toString().equals(btn2.getText().toString())) {
                     btn2.setVisibility(View.VISIBLE);
                 }
                 else {
                     btn2.setVisibility(View.GONE);
                 }
 
-                if (editSearch.getText().toString() == btn3.getText().toString()) {
+                if (editSearch.getText().toString().equals(btn3.getText().toString())) {
                     btn3.setVisibility(View.VISIBLE);
                 }
                 else {
                     btn3.setVisibility(View.GONE);
                 }
 
-                if (editSearch.getText().toString() == btn4.getText().toString()) {
+                if (editSearch.getText().toString().equals(btn4.getText().toString())) {
                     btn4.setVisibility(View.VISIBLE);
                 }
                 else {
                     btn4.setVisibility(View.GONE);
                 }
 
-                if (editSearch.getText().toString() == btn5.getText().toString()) {
+                if (editSearch.getText().toString().equals(btn5.getText().toString())) {
                     btn5.setVisibility(View.VISIBLE);
                 }
                 else {
                     btn5.setVisibility(View.GONE);
                 }
 
-                if (editSearch.getText().toString() == btn6.getText().toString()) {
+                if (editSearch.getText().toString().equals(btn6.getText().toString())) {
                     btn6.setVisibility(View.VISIBLE);
                 }
                 else {
                     btn6.setVisibility(View.GONE);
                 }
 
-                if (editSearch.getText().toString() == btn7.getText().toString()) {
+                if (editSearch.getText().toString().equals(btn7.getText().toString())) {
                     btn7.setVisibility(View.VISIBLE);
                 }
                 else {
@@ -135,11 +140,15 @@ public class RoomListActivity extends AppCompatActivity {
             }
         });
 
+        final String goal_id = "1";    // TODO: goal_id 가져올거 필요
         // 목표 추가로 화면 전환
         btnAddNew1.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 Intent intent = new Intent(RoomListActivity.this, AddRoomActivity.class);
+                intent.putExtra("id", strId);
+                intent.putExtra("username", strUserName);
+                intent.putExtra("goal_id", goal_id);
                 startActivity(intent);	//새로운 액티비티를 화면에 출력
             }
         });
@@ -148,6 +157,9 @@ public class RoomListActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 Intent intent = new Intent(RoomListActivity.this, AddRoomActivity.class);
+                intent.putExtra("id", strId);
+                intent.putExtra("username", strUserName);
+                intent.putExtra("goal_id", goal_id);
                 startActivity(intent);	//새로운 액티비티를 화면에 출력
 
             }
@@ -157,6 +169,9 @@ public class RoomListActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 Intent intent = new Intent(RoomListActivity.this, AddRoomActivity.class);
+                intent.putExtra("id", strId);
+                intent.putExtra("username", strUserName);
+                intent.putExtra("goal_id", goal_id);
                 startActivity(intent);	//새로운 액티비티를 화면에 출력
 
             }

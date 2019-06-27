@@ -38,7 +38,8 @@ import java.net.URL;
  */
 public class AddRoomActivity extends AppCompatActivity {
     public static final String TAG = "LogTest";
-    String SERVER_URL = "http://192.168.0.65:3000";
+    String SERVER_URL = "http://10.10.2.88:5000";
+    String strId, strUserName;
 
     EditText eGoalName, eGoalDescription;
     ImageView ivSevenDay, ivOneMonth, ivThreeMonth;
@@ -49,7 +50,7 @@ public class AddRoomActivity extends AppCompatActivity {
 
     ImageView addRoomBtn;
 
-    AddRoomAsyncTask addRoomAsyncTask;
+    AddRoomAsyncTask addRoomAsyncTask = new AddRoomAsyncTask();
     String userID;
     String goalName, goalDescription;
     int duration = 0;   // 0 : default  1 : 7day  2 : 1month  3: 3month
@@ -60,6 +61,10 @@ public class AddRoomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_room);
+
+        Intent getIntent = getIntent();
+        strId = getIntent.getStringExtra("id");
+        strUserName = getIntent.getStringExtra("username");
 
         // 뷰 정의
         eGoalName = (EditText) findViewById(R.id.editTextGoalName);
@@ -127,6 +132,8 @@ public class AddRoomActivity extends AppCompatActivity {
         addRoomBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(AddRoomActivity.this, WaitingRoomActivity.class);
+                intent.putExtra("id", strId);
+                intent.putExtra("username", strUserName);
                 startActivity(intent);	//새로운 액티비티를 화면에 출력
             }
         });
@@ -319,7 +326,7 @@ public class AddRoomActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String str) {
-            if(str.equals(null)) {
+            if(str == null) {
                 Log.d(TAG, "방 생성 실패! 수신받은 값 unll");
             }
 
@@ -330,6 +337,8 @@ public class AddRoomActivity extends AppCompatActivity {
                 else {
                     if(jsonObject.get("result").toString().equals("OK")) {
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        intent.putExtra("id", strId);
+                        intent.putExtra("username", strUserName);
                         Log.d(TAG, "방 생성 성공!");
                         startActivity(intent);
                     }

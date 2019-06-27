@@ -184,7 +184,7 @@ public class LoginActivity extends FontActivity {
 
         @Override
         protected void onPostExecute(String str) {
-            if(str.equals(null)) {
+            if(str == null) {
                 Log.d(TAG, "로그인 실패! 수신받은 값 unll");
             }
 
@@ -202,6 +202,8 @@ public class LoginActivity extends FontActivity {
                 }
 
             } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (NullPointerException e){
                 e.printStackTrace();
             }
         }
