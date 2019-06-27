@@ -6,9 +6,12 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,11 +38,11 @@ public class LoginActivity extends AppCompatActivity {
     String SERVER_URL = "http://192.168.0.65:3000";
     final int REQUEST_JOIN = 1;
     EditText eID, ePwd;
-    Button loginBtn, joinBtn;
+    ImageView ivLogin, ivJoin;
 
     LoginAsyncTask loginAsyncTask;
     Context context;
-    String id, pwd;
+    String userID, pwd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,32 +53,42 @@ public class LoginActivity extends AppCompatActivity {
         // 뷰 정의
         eID = (EditText) findViewById(R.id.editTextID);
         ePwd = (EditText) findViewById(R.id.editTextPwd);
-        loginBtn = (Button) findViewById(R.id.loginBtn);
-        joinBtn = (Button) findViewById(R.id.joinBtn);
+        ivLogin = (ImageView) findViewById(R.id.loginBtn);
+        ivJoin = (ImageView) findViewById(R.id.joinBtn);
 
         // 로그인버튼 클릭 시
-        loginBtn.setOnClickListener(new View.OnClickListener() {
+        ivLogin.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                id = eID.getText().toString();
-                pwd = ePwd.getText().toString();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:   // 클릭 시
+                        userID = eID.getText().toString();
+                        pwd = ePwd.getText().toString();
 
-                if(id.equals(null))  // 공백 입력 방지
-                    Log.d(TAG, "id 공백");
-                else if(pwd.equals(null))
-                    Log.d(TAG, "id 공백");
-                else {
-                    loginAsyncTask.execute("/login");
+                        if(userID.equals(null))  // 공백 입력 방지
+                            Log.d(TAG, "id 공백");
+                        else if(pwd.equals(null))
+                            Log.d(TAG, "id 공백");
+                        else {
+                            loginAsyncTask.execute("/login");
+                        }
+                        break;
                 }
+                return true;
             }
         });
 
         // 회원가입 버튼 클릭 시
-        joinBtn.setOnClickListener(new View.OnClickListener() {
+        ivJoin.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, JoinActivity.class);
-                startActivityForResult(intent, REQUEST_JOIN);
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:   // 클릭 시
+                        Intent intent = new Intent(context, JoinActivity.class);
+                        startActivityForResult(intent, REQUEST_JOIN);
+                        break;
+                }
+                return true;
             }
         });
     }
@@ -85,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... strings) {
             Log.d(TAG, "LoginAsyncTask doInBackground");
-            String search_url = SERVER_URL + strings[0];    // URL
+            String login_url = SERVER_URL + strings[0];    // URL
 // POST 전송방식을 위한 설정
             HttpURLConnection con = null;
             BufferedReader reader = null;
@@ -93,11 +106,11 @@ public class LoginActivity extends AppCompatActivity {
             // 서버에 특정 키워드 디비에서 검색 요청
             try {
                 JSONObject jsonObject = new JSONObject();
-                jsonObject.accumulate("id", id);
+                jsonObject.accumulate("id", userID);
                 jsonObject.accumulate("password", pwd);
-                Log.d(TAG, "url : " + search_url);
+                Log.d(TAG, "url : " + login_url);
 
-                URL url = new URL(search_url);  // URL 객체 생성
+                URL url = new URL(login_url);  // URL 객체 생성
                 Log.d(TAG, "jsonObject String : " + jsonObject.toString());
 
                 con = (HttpURLConnection) url.openConnection();
@@ -166,12 +179,12 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 JSONObject jsonObject = new JSONObject(str);
                 if(jsonObject.get("username") == null)
-                    Log.d(TAG, "로그인 실패! nickname 안담김");
+                    Log.d(TAG, "로그인 실패! username 안담김");
                 else {
                     String username = jsonObject.get("username").toString();
                     Intent intent = new Intent(context, MainActivity.class);
                     Log.d(TAG, "로그인 성공!");
-                    intent.putExtra("id", id);  // 성공했으니 id 담아서 인텐트 시작
+                    intent.putExtra("id", userID);  // 성공했으니 id 담아서 인텐트 시작
                     intent.putExtra("username", username);  // 성공했으니 id 담아서 인텐트 시작
                     startActivity(intent);
                 }
@@ -206,11 +219,11 @@ public class LoginActivity extends AppCompatActivity {
             case REQUEST_JOIN:
                 if(resultCode == RESULT_OK) {
                     Log.d(TAG, "회원가입 성공! id, pwd 값 얻어오는 과정");
-                    id = intent.getStringExtra("id");
+                    userID = intent.getStringExtra("id");
                     pwd = intent.getStringExtra("pwd");
 
                     // edittext 설정
-                    eID.setText(id);
+                    eID.setText(userID);
                     ePwd.setText(pwd);
                 }
                 else {

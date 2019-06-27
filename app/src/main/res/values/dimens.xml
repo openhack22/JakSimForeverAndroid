@@ -8,5 +8,9 @@
     <dimen name="LoginBtnHeight">50dp</dimen>
     <dimen name="JoinBtnHeight">50dp</dimen>
 
+    <!-- JoinActivity -->
+    <dimen name="joinLayoutMargin">10dp</dimen>
+    <dimen name="checkBtnHeight">30dp</dimen>
+    <dimen name="cardLayoutMargin">10dp</dimen>
 
 </resources>
