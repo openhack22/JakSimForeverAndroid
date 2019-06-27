@@ -2,7 +2,7 @@
 <resources>
     <!-- LoginActivity -->
     <dimen name="LoginLogoHeight">160dp</dimen>
-    <dimen name="LoginEditTextHeight">40dp</dimen>
+    <dimen name="LoginEditTextHeight">33dp</dimen>
     <dimen name="LoginEditTextWidth">270dp</dimen>
     <dimen name="LoginBtnWidth">270dp</dimen>
     <dimen name="JoinBtnHeight">50dp</dimen>
@@ -13,13 +13,13 @@
     <dimen name="joinLayoutMargin">20dp</dimen>
     <dimen name="checkBtnHeight">30dp</dimen>
     <dimen name="cardLayoutMargin">10dp</dimen>
-    <dimen name="cardLayoutWidth">340dp</dimen>
+    <dimen name="cardLayoutWidth">330dp</dimen>
     <dimen name="cardEditTextHeight">35dp</dimen>
     <dimen name="JoinUserLayoutMarginTop">40dp</dimen>
     <dimen name="JoinEditTextWidth">190dp</dimen>
-    <dimen name="JoinPwdEditTextWidth">278dp</dimen>
+    <dimen name="JoinPwdEditTextWidth">268dp</dimen>
     <dimen name="JoinUserTextviewHeight">30dp</dimen>
-    <dimen name="JoinUserTextviewWidth">70dp</dimen>
+    <dimen name="JoinUserTextviewWidth">40dp</dimen>
     <dimen name="JoinMargin">5dp</dimen>
 
     <!-- AddRoomActivity -->

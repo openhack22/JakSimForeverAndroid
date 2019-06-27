@@ -7,6 +7,7 @@
     android:layout_marginLeft="@dimen/addRoomLayoutMargin"
     android:layout_marginRight="@dimen/addRoomLayoutMargin"
     android:orientation="vertical"
+    android:background="#FFFFFF"
     tools:context=".AddRoomActivity">
 
     <LinearLayout
@@ -21,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:text="목표이름 : "
-            android:textSize="13dp"
+            android:textSize="20dp"
             android:gravity="left|center"
             android:layout_gravity="center"
             android:textAlignment="center"
@@ -35,6 +36,7 @@
             android:inputType="textNoSuggestions"
             android:paddingLeft="10dp"
             android:layout_gravity="bottom"
+            android:textSize="15dp"
             android:fontFamily="@font/notosansbold"
             />
     </LinearLayout>
@@ -48,10 +50,10 @@
         android:padding="10dp"
         android:layout_marginTop="20dp"
         android:scrollHorizontally="false"
-        android:textSize="12dp"
+        android:textSize="18dp"
         android:background="@drawable/addroom_background"
         android:hint="@string/hint"
-        android:fontFamily="@font/notosansbold"
+        android:fontFamily="@font/notosansregular"
         android:gravity="top"
         />
 
@@ -59,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="기간"
-        android:textSize="13dp"
+        android:textSize="17dp"
         android:gravity="left"
         android:layout_gravity="left"
         android:layout_marginTop="20dp"
@@ -110,7 +112,7 @@
         android:layout_height="wrap_content"
         android:text="금액"
         android:layout_marginTop="20dp"
-        android:textSize="13dp"
+        android:textSize="17dp"
         android:gravity="left"
         android:layout_gravity="left"
         />
@@ -149,7 +151,7 @@
         android:layout_marginBottom="10dp"
         android:gravity="left"
         android:text="인원"
-        android:textSize="13dp" />
+        android:textSize="17dp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

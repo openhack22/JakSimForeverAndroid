@@ -79,9 +79,10 @@
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:layout_marginTop="25dp"
+                        android:layout_marginTop="35dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
+                        android:background="@drawable/login_shadow_32858"
                         app:srcCompat="@drawable/login_btn"
                         />
 
@@ -91,7 +92,7 @@
                     android:layout_height="@dimen/JoinBtnHeight"
                     android:layout_gravity="right"
                     android:textAlignment="center"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="17dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
                     app:layout_constraintDimensionRatio="1:1"

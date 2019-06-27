@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".RoomListActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    >
 
     <TabHost
         android:id="@+id/tabHost1"
@@ -14,12 +16,71 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
             android:orientation="vertical">
 
-            <TabWidget
-                android:id="@android:id/tabs"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content">
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:weightSum="1"
+                    >
+                    <ImageView
+                        android:id="@+id/sevenDayListFilter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:srcCompat="@drawable/list_sevendayfilter"
+                        />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:background="#FFCC33"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp">
+                    </View>
+                    <ImageView
+                        android:id="@+id/oneMonthListFilter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:srcCompat="@drawable/list_onemonthfilter"
+                        />
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:background="#FFCC33"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp">
+                    </View>
+                    <ImageView
+                        android:id="@+id/threeMonthListFilter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:srcCompat="@drawable/list_threemonthfilter"
+                        />
+                </LinearLayout>
+            </FrameLayout>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
@@ -32,30 +93,61 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/autoCompleteTextView1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:completionThreshold="2"
-                        android:hint="검색어를 입력하세요."
-                        android:layout_margin="8dp">
-                    </AutoCompleteTextView>
-
-
-                    <ListView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/autoCompleteTextView1"
-                        android:textFilterEnabled="true"
-                        android:id="@+id/listview1"/>
-
-                    <Button
-                        android:id="@+id/btnAddNew1"
+                    <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:text="목표 추가하기"/>
+                        android:layout_marginTop="25dp"
+                        android:orientation="horizontal">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autoCompleteTextView1"
+                            android:layout_width="350dp"
+                            android:layout_height="wrap_content"
+                            android:completionThreshold="2"
+                            android:inputType="textNoSuggestions"
+                            android:fontFamily="@font/notosansbold"
+                            android:background="@drawable/list_searchbar"
+                            android:paddingLeft="10dp"
+                            android:layout_margin="8dp">
+                        </AutoCompleteTextView>
+
+                        <ImageView
+                            android:id="@+id/searchBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignRight="@id/autoCompleteTextView1"
+                            android:layout_marginRight="20dp"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:srcCompat="@drawable/list_searchbtn"
+                            />
+                    </RelativeLayout>
+
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="450dp"
+                        android:layout_below="@id/autoCompleteTextView1"
+                        android:textFilterEnabled="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
+                        android:id="@+id/listview1"/>
+
+                    <ImageView
+                        android:id="@+id/btnAddNew1"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="15dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:srcCompat="@drawable/list_addgoal"
+                        />
 
                 </LinearLayout>
 
@@ -65,30 +157,66 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/autoCompleteTextView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:completionThreshold="2"
-                        android:hint="검색어를 입력하세요."
-                        android:layout_margin="8dp">
-                    </AutoCompleteTextView>
-
-
-                    <ListView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/autoCompleteTextView2"
-                        android:textFilterEnabled="true"
-                        android:id="@+id/listview2"/>
-
-                    <Button
-                        android:id="@+id/btnAddNew2"
+                    <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:text="목표 추가하기"/>
+                        android:layout_marginTop="25dp"
+                        android:orientation="horizontal">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autoCompleteTextView2"
+                            android:layout_width="350dp"
+                            android:layout_height="wrap_content"
+                            android:completionThreshold="2"
+                            android:inputType="textNoSuggestions"
+                            android:fontFamily="@font/notosansbold"
+                            android:background="@drawable/list_searchbar"
+                            android:paddingLeft="10dp"
+                            android:layout_margin="8dp">
+                        </AutoCompleteTextView>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignRight="@id/autoCompleteTextView2"
+                            android:layout_marginRight="20dp"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:srcCompat="@drawable/list_searchbtn"
+                            />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </LinearLayout>
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="450dp"
+                        android:layout_below="@id/autoCompleteTextView1"
+                        android:textFilterEnabled="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
+                        android:id="@+id/listview2"/>
+
+                    <ImageView
+                        android:id="@+id/btnAddNew2"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:srcCompat="@drawable/list_addgoal"
+                        />
 
                 </LinearLayout>
 
@@ -98,31 +226,58 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/autoCompleteTextView3"
-                        android:layout_width="match_parent"
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:completionThreshold="2"
-                        android:hint="검색어를 입력하세요."
-                        android:layout_margin="8dp">
-                    </AutoCompleteTextView>
+                        android:layout_gravity="center"
+                        android:layout_marginTop="25dp"
+                        android:orientation="horizontal">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autoCompleteTextView3"
+                            android:layout_width="350dp"
+                            android:layout_height="wrap_content"
+                            android:completionThreshold="2"
+                            android:inputType="textNoSuggestions"
+                            android:paddingLeft="10dp"
+                            android:fontFamily="@font/notosansbold"
+                            android:background="@drawable/list_searchbar"
+                            android:layout_margin="8dp">
+                        </AutoCompleteTextView>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignRight="@id/autoCompleteTextView3"
+                            android:layout_marginRight="20dp"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:srcCompat="@drawable/list_searchbtn"
+                            />
+                    </RelativeLayout>
 
 
                     <ListView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/autoCompleteTextView3"
+                        android:layout_height="450dp"
+                        android:layout_below="@id/autoCompleteTextView2"
                         android:textFilterEnabled="true"
                         android:id="@+id/listview3"/>
 
-                    <Button
+                    <ImageView
                         android:id="@+id/btnAddNew3"
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:text="목표 추가하기"/>
-
+                        android:layout_gravity="right"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:srcCompat="@drawable/list_addgoal"
+                        />
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>
