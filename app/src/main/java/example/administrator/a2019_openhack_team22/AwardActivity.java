@@ -22,7 +22,7 @@ public class AwardActivity extends FontActivity {
     ConstraintLayout layoutCost;    // 돈 결과 나오는 레이아웃
     TextView txtWinnerUserName; // 우승한 유저 이름
     TextView txtAmount;     // setText 할 때 "원"붙여줘야함
-    ImageView imgCircle;
+    ImageView imgCircle, imgMedal;
     int amount;
 
     @Override
@@ -37,6 +37,7 @@ public class AwardActivity extends FontActivity {
         txtAmount = findViewById(R.id.txt_cost);
         layoutCost = findViewById(R.id.layout_cost);
         imgCircle = findViewById(R.id.img_circle);
+        imgMedal = findViewById(R.id.img_medal);
 
         if(isWin){
             lottieAnimationView.setAnimation("677-trophy.json");
@@ -73,6 +74,7 @@ public class AwardActivity extends FontActivity {
                 layoutCost.setVisibility(View.VISIBLE);
                 startCountAnimation(txtAmount, amount);
                 imgCircle.setVisibility(View.VISIBLE);
+                imgMedal.setVisibility(View.VISIBLE);
             }
 
             @Override

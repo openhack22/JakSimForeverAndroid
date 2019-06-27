@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -31,8 +32,10 @@ public class MainActivity extends FontActivity {
 
     TextView userName, plusMoney, minusMoney, numGoal;  // 사용자 닉네임, 얻은 돈, 잃은 돈, 참여중인 공동목표
     Button btnJoin; // 공동목표 참여하기 버튼
+    ListView mainList;
     String strUserName, strId;
     String SERVER_URL = "http://10.10.2.88:5000";
+    MainAdapter mainAdapter = new MainAdapter();
 
 //    LoginAsyncTask loginAsyncTask;
     GetRoomAsyncTask getRoomAsyncTask = new GetRoomAsyncTask();
@@ -49,6 +52,8 @@ public class MainActivity extends FontActivity {
         userName = (TextView) findViewById(R.id.name);
         numGoal = (TextView) findViewById(R.id.numGoal);
         btnJoin = (Button) findViewById(R.id.btnJoin);
+        mainList = findViewById(R.id.main_list);
+        mainList.setAdapter(mainAdapter);
 
         // userName login 액티비티에서 받아와 표시 : userName
         Intent intent = getIntent();
@@ -166,6 +171,19 @@ public class MainActivity extends FontActivity {
 //                if(jsonObject.get("result") == null)
                     Log.d(TAG, "방 정보 가져오기 실패! result 안담김");
 //                else {
+                String[] nameList = jsonParser(jsonObject.get("goal_name").toString());
+                String[] idList = jsonParser(jsonObject.get("goal_id").toString());
+                String[] completeList = jsonParser(jsonObject.get("people").toString());
+                String[] dayList = jsonParser(jsonObject.get("limit").toString());
+                Log.e("ASD", String.valueOf(nameList.length));
+                Log.e("ASD", String.valueOf(idList.length));
+                Log.e("ASD", String.valueOf(completeList.length));
+                Log.e("ASD", String.valueOf(dayList.length));
+
+                for (int i = 0; i < nameList.length - 1; i++) {
+                    mainAdapter.addItem(new ListMainItem(Integer.valueOf(idList[i]), nameList[i],
+                            (int)(Integer.valueOf(completeList[i]) * 100 / Integer.valueOf(dayList[i]) )));
+                }
                     Log.e("goal_id", jsonObject.get("goal_id").toString());
                     Log.e("goal_name", jsonObject.get("goal_name").toString());
                     Log.e("user_id", jsonObject.get("user_id").toString());
@@ -206,7 +224,11 @@ public class MainActivity extends FontActivity {
     public static String[] jsonParser(String string){
         string = string.substring(1,string.length()-2); // 괄호 지움
         string = string.replace('"', ' ');
+        String[] result = string.split(",");
+        if(string.contains("\""))
+            for (int i = 0; i < result.length; i++)
+                result[i] = result[i].substring(1, result[i].length() - 2);
 
-        return string.split(",");
+        return result;
     }
 }

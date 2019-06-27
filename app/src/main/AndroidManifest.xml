@@ -32,7 +32,7 @@
             android:name=".RoomActivity"
             android:theme="@style/NoTheme" />
         <activity
-            android:name=".AwardActivity"
+            android:name=".SplashActivity"
             android:theme="@style/NoTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,7 +48,7 @@
             android:name=".AuthActivity"
             android:theme="@style/NoTheme">
         </activity>
-        <activity android:name=".SplashActivity"
+        <activity android:name=".AwardActivity"
             android:theme="@style/NoTheme"
             >
 

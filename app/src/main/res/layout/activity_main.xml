@@ -151,78 +151,11 @@
                 android:text="4개"/>
         </LinearLayout>
 
-        <ScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
-
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="8dp">
-
-                <Button
-                    android:id="@+id/goal1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="토익 900점 >"
-                    android:background="#ffffff"/>
-
-                <ProgressBar
-                    android:id="@+id/progress1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:max="100"
-                    android:progress="10"/>
-
-                <Button
-                    android:id="@+id/goal2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="토익 900점 >"
-                    android:background="#ffffff"/>
-
-                <ProgressBar
-                    android:id="@+id/progress2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:max="100"
-                    android:progress="80"/>
-
-                <Button
-                    android:id="@+id/goal3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="토익 900점 >"
-                    android:background="#ffffff"/>
-
-                <ProgressBar
-                    android:id="@+id/progress3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:max="100"
-                    android:progress="50"/>
-
-                <Button
-                    android:id="@+id/goal4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="토익 900점 >"
-                    android:background="#ffffff"/>
-
-                <ProgressBar
-                    android:id="@+id/progress4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:max="100"
-                    android:progress="20"/>
-
-
                 <Button
                     android:id="@+id/btnJoin"
                     android:layout_width="wrap_content"
@@ -230,9 +163,18 @@
                     android:text="공동목표 참여하기"
                     android:layout_gravity="center"
                     android:layout_marginTop="16dp"/>
+                <ListView
+                    android:id="@+id/main_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                </ListView>
+
+
+
 
             </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
+    </LinearLayout>Android
 
 </FrameLayout>
