@@ -4,7 +4,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/txt_result"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/txt_rank"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="100dp"
+        android:text="축하합니다!"
+        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/txt_rank"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="1위"
+        android:textSize="40sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/txt_winner_name"
+        android:layout_margin="50dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/txt_rank"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:text="userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_cost"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/txt_winner_name"
+        android:layout_marginTop="20dp"
+        android:padding="25dp"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="수상금액"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/txt_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="190000원"
+            android:textSize="40sp"/>
+
+    </android.support.constraint.ConstraintLayout>
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

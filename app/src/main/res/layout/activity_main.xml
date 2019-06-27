@@ -1,18 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:text="User"
+            android:gravity="center_vertical"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:paddingLeft="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 님, 오늘도 힘내세요!"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
 
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="얻은 돈"
+                android:gravity="center"
+                android:background="#DADADA"
+                android:padding="4dp"/>
+
+            <TextView
+                android:id="@+id/plusMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0원"
+                android:padding="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="잃은 돈"
+                android:gravity="center"
+                android:background="#DADADA"
+                android:padding="4dp"/>
+
+            <TextView
+                android:id="@+id/minusMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0원"
+                android:padding="4dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:background="#DADADA">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="잔고"
+            android:layout_weight="5"/>
+
+        <TextView
+            android:id="@+id/myMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0원"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="8dp"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="참여중인 공동목표 : "/>
+
+        <TextView
+            android:id="@+id/numGoal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0개"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/goal1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토익 900점 >"
+                android:background="#ffffff"/>
+
+            <ProgressBar
+                android:id="@+id/progress1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="100"
+                android:progress="20"/>
+
+            <Button
+                android:id="@+id/goal2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토익 900점 >"
+                android:background="#ffffff"/>
+
+            <ProgressBar
+                android:id="@+id/progress2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="100"
+                android:progress="80"/>
+
+            <Button
+                android:id="@+id/goal3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토익 900점 >"
+                android:background="#ffffff"/>
+
+            <ProgressBar
+                android:id="@+id/progress3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="100"
+                android:progress="50"/>
+
+            <Button
+                android:id="@+id/btnJoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="공동목표 참여하기"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

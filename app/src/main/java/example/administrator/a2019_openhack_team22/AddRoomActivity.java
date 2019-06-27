@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -46,6 +47,8 @@ public class AddRoomActivity extends AppCompatActivity {
     SeekBar seekMoneyBar;
     TextView tvMoney;
 
+    ImageView addRoomBtn;
+
     AddRoomAsyncTask addRoomAsyncTask;
     String userID;
     String goalName, goalDescription;
@@ -71,6 +74,7 @@ public class AddRoomActivity extends AppCompatActivity {
         ivAddRoomBtn = (ImageView) findViewById(R.id.addRoomBtn);
         seekMoneyBar = (SeekBar) findViewById(R.id.moneySeekBar);
         tvMoney = (TextView) findViewById(R.id.textViewMoney);
+        addRoomBtn = (ImageView) findViewById(R.id.addRoomBtn);
 
         // RoomListActivity에서 아이디와 닉네임 가지고 옴.
 //        Intent userInfoIntent = getIntent();
@@ -115,6 +119,15 @@ public class AddRoomActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
                 if(money == 0)
                     tvMoney.setText("free");
+            }
+        });
+
+
+        // WaitingRoomActivity로 화면 전환
+        addRoomBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(AddRoomActivity.this, WaitingRoomActivity.class);
+                startActivity(intent);	//새로운 액티비티를 화면에 출력
             }
         });
     }
