@@ -5,6 +5,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,8 +16,7 @@ import java.io.InputStream;
 
 public class AuthActivity extends AppCompatActivity {
 
-    ImageView imgShow;
-    Button btnAddImg, btnWrite;
+    ImageView imgShow, btnAddImg, btnWrite;
     EditText txtShow;
 
     @Override
@@ -24,27 +25,36 @@ public class AuthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_auth);
 
         imgShow = (ImageView) findViewById(R.id.imgShow);
-        btnAddImg = (Button) findViewById(R.id.btnAddImg);
-        btnWrite = (Button) findViewById(R.id.btnWrite);
+        btnAddImg = (ImageView) findViewById(R.id.btnAddImg);
+        btnWrite = (ImageView) findViewById(R.id.btnWrite);
         txtShow = (EditText) findViewById(R.id.txtShow);
 
         // 버튼 클릭 시 카메라 앨범으로 이동
-        btnAddImg.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(intent, 1);
-
+        btnAddImg.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:   // 클릭 시
+                        Intent intent = new Intent();
+                        intent.setType("image/*");
+                        intent.setAction(Intent.ACTION_GET_CONTENT);
+                        startActivityForResult(intent, 1);
+                        break;
+                }
+                return true;
             }
         });
 
-        // 액티비티 종료하고 이전으로 돌아가기
-        Button btnWrite = (Button) findViewById(R.id.btnWrite);
-        btnWrite.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // TODO: 입력 정보 (인증 사진 및 코멘트) 저장하여 표시
-                finish();    //액티비티 종료.
+        btnWrite.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:   // 클릭 시
+                        // TODO: 입력 정보 (인증 사진 및 코멘트) 저장하여 표시
+                        finish();    //액티비티 종료.
+                        break;
+                }
+                return true;
             }
         });
     }

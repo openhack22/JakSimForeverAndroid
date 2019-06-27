@@ -37,6 +37,9 @@
         <activity
             android:name=".RoomListActivity"
             android:theme="@style/NoTheme" />
+        <activity
+            android:name=".AuthActivity"
+            android:theme="@style/NoTheme"></activity>
         <activity android:name=".SplashActivity"
             android:theme="@style/NoTheme"
             >

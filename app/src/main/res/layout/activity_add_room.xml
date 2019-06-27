@@ -45,13 +45,14 @@
         android:layout_height="150dp"
         android:imeOptions="actionNext"
         android:inputType="textMultiLine|textLongMessage"
-        android:paddingLeft="10dp"
+        android:padding="10dp"
         android:layout_marginTop="20dp"
         android:scrollHorizontally="false"
         android:textSize="12dp"
         android:background="@drawable/addroom_background"
         android:hint="@string/hint"
         android:fontFamily="@font/notosansbold"
+        android:gravity="top"
         />
 
     <TextView
@@ -134,6 +135,7 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/notosansbold"
             android:gravity="center"
+            android:layout_marginLeft="5dp"
             android:text="free"
             android:textSize="12dp" />
 
@@ -206,7 +208,7 @@
         android:id="@+id/addRoomBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="35dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:layout_gravity="center"

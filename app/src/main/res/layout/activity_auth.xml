@@ -16,7 +16,11 @@
             android:layout_gravity="center"
             >
             <ImageView
-                android:id="@+id/imgShow"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="#B9B9B9"/>
+            <ImageView
+                android:id="@+id/btnAddImg"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -25,29 +29,42 @@
                 app:layout_constraintDimensionRatio="1:1"
                 app:srcCompat="@drawable/auth_camerabtn"
                 />
+
+            <ImageView
+                android:id="@+id/showImg"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                app:layout_constraintDimensionRatio="1:1"
+                />
         </FrameLayout>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnAddImg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="사진 추가"/>
 
     <EditText
         android:id="@+id/txtShow"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_margin="24dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="50dp"
         android:padding="16dp"
-        android:text="인증 코멘트 입력"
-        android:background="#DADADA"/>
+        android:gravity="top"
+        android:inputType="textMultiLine|textLongMessage"
+        android:fontFamily="@font/notosansregular"
+        android:text="asd"
+        android:background="@drawable/auth_textbox"/>
 
-    <Button
+    <ImageView
         android:id="@+id/btnWrite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="작성완료"/>
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1"
+        app:srcCompat="@drawable/auth_authbtn"
+        />
 </LinearLayout>
