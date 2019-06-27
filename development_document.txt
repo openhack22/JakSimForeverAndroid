@@ -12,6 +12,7 @@
 방 시작 : RoomActivity
 Progress Bar 선택 시 나오는 액티비티 : RoomHistoryActivity
 시상 : AwardActivity
+목표 정보 : DetailActivity
 
 *** LoginActivity
 url : http://~/login
