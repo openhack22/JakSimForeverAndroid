@@ -6,17 +6,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <TextView
         android:id="@+id/txt_result"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/txt_rank"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="150dp"
-        android:textColor="@color/colorPrimaryDark"
+        android:layout_margin="120dp"
         android:textStyle="bold"
         android:text="축하합니다!"
-        android:textSize="30sp"
+        android:textSize="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
     <ImageView
         android:id="@+id/img_circle"
         android:visibility="gone"
@@ -62,23 +62,26 @@
         android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/sixPeopleBtn"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:textColor="#FFF"
-            android:text="수상금액"
-            android:textSize="20sp"/>
+            android:layout_weight="0.247"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1"
+            app:srcCompat="@drawable/award_getaward"
+            />
         <TextView
             android:id="@+id/txt_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#fff"
+            android:gravity="top"
+            android:padding="10dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="190000원"
-            android:textSize="40sp"/>
+            android:text="190000"
+            android:textSize="20dp"/>
 
     </android.support.constraint.ConstraintLayout>
     <com.airbnb.lottie.LottieAnimationView

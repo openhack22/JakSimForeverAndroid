@@ -13,7 +13,7 @@ import com.airbnb.lottie.LottieAnimationView;
 
 import java.text.NumberFormat;
 
-public class AwardActivity extends AppCompatActivity {
+public class AwardActivity extends FontActivity {
 
     Boolean isWin = true;   // Intent getExtra로 처리
     LottieAnimationView lottieAnimationView;
