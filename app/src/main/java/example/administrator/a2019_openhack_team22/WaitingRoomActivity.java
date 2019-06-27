@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * // TODO: 아직 이 엑티비티로 넘어오는 코드 안 짰음!!
+ * // TODO: 아직 이 엑티비티로 넘어오는 코드 안 짰음!! -> 추가함
  * ListActivity -> WaitingRoomActivity
  * 목표의 상세정보를 나타내는 액티비티
  */

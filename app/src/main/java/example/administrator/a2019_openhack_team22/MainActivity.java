@@ -42,13 +42,13 @@ public class MainActivity extends AppCompatActivity {
         numGoal = (TextView) findViewById(R.id.numGoal);
         btnJoin = (Button) findViewById(R.id.btnJoin);
 
-        // userName DB에서 받아와 표시 : userName
+        // TODO:userName DB에서 받아와 표시 : userName
 
 
-        // 얻은 돈, 잃은 돈 DB에서 받아와 표시 : plusMoney, minusMoney
+        // TODO:얻은 돈, 잃은 돈 DB에서 받아와 표시 : plusMoney, minusMoney
 
 
-        // 참여중인 목표 개수 DB에서 받아와 표시 : numGoal
+        // TODO:참여중인 목표 개수 DB에서 받아와 표시 : numGoal
 
 
         // '공동목표 참여하기'버튼 클릭하면 리스트화면 들어가기
