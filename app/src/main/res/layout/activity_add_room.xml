@@ -211,9 +211,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
+        android:layout_gravity="center"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:layout_gravity="center"
         app:srcCompat="@drawable/addroom_addroombtn"
         app:layout_constraintDimensionRatio="1:1"
         />

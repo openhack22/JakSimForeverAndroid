@@ -31,7 +31,7 @@ import java.net.URL;
  * ListActivity -> WaitingRoomActivity
  * 목표의 상세정보를 나타내는 액티비티
  */
-public class WaitingRoomActivity extends AppCompatActivity {
+public class WaitingRoomActivity extends FontActivity {
     public static final String TAG = "LogTest";
 
     TextView txtUserName;   // 유저 네임 텍스트
