@@ -30,7 +30,7 @@
                 />
             <ImageView
                 android:id="@+id/idCheckBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="@dimen/checkBtnHeight"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
@@ -46,7 +46,7 @@
             android:layout_height="@dimen/LoginEditTextHeight"
             android:imeOptions="actionNext"
             android:fontFamily="@font/notosansbold"
-            android:inputType="textNoSuggestions"
+            android:inputType="textPassword"
             android:paddingLeft="10dp"
             />
 
@@ -56,7 +56,7 @@
             android:layout_height="@dimen/LoginEditTextHeight"
             android:imeOptions="actionNext"
             android:fontFamily="@font/notosansbold"
-            android:inputType="textNoSuggestions"
+            android:inputType="textPassword"
             android:paddingLeft="10dp"
             />
 
@@ -76,7 +76,7 @@
                 />
             <ImageView
                 android:id="@+id/usernameCheckBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="@dimen/checkBtnHeight"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"

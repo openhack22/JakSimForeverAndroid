@@ -7,6 +7,8 @@
     <dimen name="LoginEditTextWidth">50dp</dimen>
     <dimen name="LoginBtnHeight">50dp</dimen>
     <dimen name="JoinBtnHeight">50dp</dimen>
+    <dimen name="LoginBackgroundMarginTop">50dp</dimen>
+    <dimen name="LoginLayoutMargin">10dp</dimen>
 
     <!-- JoinActivity -->
     <dimen name="joinLayoutMargin">10dp</dimen>

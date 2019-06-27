@@ -23,7 +23,7 @@ receive
 --> {"username" : "닉네임"}
 
 *** JoinActivity
-url : http://~/join
+url : http://~/regist
 json data
 send
 --> {"id" : "아이디"}, {"password" : "패스워드"}, {"username" : "닉네임"}
@@ -50,6 +50,6 @@ json data
 send
 --> {"id" : "아이디"}, {"goalName" : "목표이름"}, {"goalDescription", "목표내용"}, {"duration" : "기간"}, {"money" : "돈"}, {"userNum" : "인원"}
 ---> duration == 0 : default  1 : 7day  2 : 1month  3: 3month
----> userNum == 0 : default  1 : 3people  2 : 4people  3 : 5people  4 : 6people
+---> userNum == 0 : default  3 : 3people  4 : 4people  5 : 5people  6 : 6people
 receive
 --> {"result" : "OK"}

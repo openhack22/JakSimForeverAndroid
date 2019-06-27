@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -33,12 +34,13 @@ import java.net.URL;
 로그인 기능 수행하는 액티비티
 - 이해원
  */
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends FontActivity {
     public static final String TAG = "LogTest";
-    String SERVER_URL = "http://192.168.0.65:3000";
+    String SERVER_URL = "http://10.10.2.88:5000";
     final int REQUEST_JOIN = 1;
     EditText eID, ePwd;
-    ImageView ivLogin, ivJoin;
+    ImageView ivLogin;
+    TextView ivJoin;
 
     LoginAsyncTask loginAsyncTask;
     Context context;
@@ -54,7 +56,8 @@ public class LoginActivity extends AppCompatActivity {
         eID = (EditText) findViewById(R.id.editTextID);
         ePwd = (EditText) findViewById(R.id.editTextPwd);
         ivLogin = (ImageView) findViewById(R.id.loginBtn);
-        ivJoin = (ImageView) findViewById(R.id.joinBtn);
+        ivJoin = (TextView) findViewById(R.id.joinBtn);
+        loginAsyncTask = new LoginAsyncTask();
 
         // 로그인버튼 클릭 시
         ivLogin.setOnTouchListener(new View.OnTouchListener() {
