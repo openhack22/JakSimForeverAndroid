@@ -10,10 +10,10 @@ import android.widget.Toast;
 
 /**
  * // TODO: 아직 이 엑티비티로 넘어오는 코드 안 짰음!!
- * ListActivity -> DetailActivity
+ * ListActivity -> WaitingRoomActivity
  * 목표의 상세정보를 나타내는 액티비티
  */
-public class DetailActivity extends AppCompatActivity {
+public class WaitingRoomActivity extends AppCompatActivity {
 
     TextView txtUserName;   // 유저 네임 텍스트
     TextView txtStartDate;  // 시작 날짜 텍스트
@@ -31,7 +31,7 @@ public class DetailActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_waiting_room);
 
         txtUserName = findViewById(R.id.txt_user_name);
         txtStartDate = findViewById(R.id.txt_start_date);
@@ -49,7 +49,7 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // TODO: 서버 통신 부분 넣어야 함
-                Toast.makeText(DetailActivity.this, "참여하기 버튼 누름!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(WaitingRoomActivity.this, "참여하기 버튼 누름!", Toast.LENGTH_SHORT).show();
             }
         });
     }
