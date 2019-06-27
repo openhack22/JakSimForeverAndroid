@@ -5,11 +5,20 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 
 public class SplashActivity extends Activity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+
+            ImageView imageView = (ImageView) findViewById(R.id.splash);
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(imageView);
+            Glide.with(this).load(R.drawable.splash).into(gifImage);
+
             Handler hd = new Handler();
             hd.postDelayed(new splashhandler(), 3000); // 1초 후에 hd handler 실행  3000ms = 3초
 
