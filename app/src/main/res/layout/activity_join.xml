@@ -44,7 +44,7 @@
                     android:layout_margin="@dimen/JoinMargin"
                     >
                     <TextView
-                        android:layout_width="@dimen/JoinUserTextviewWidth"
+                        android:layout_width="60dp"
                         android:layout_height="@dimen/JoinUserTextviewHeight"
                         android:text="아이디"
                         android:textSize="13dp"
@@ -66,7 +66,7 @@
                         android:layout_width="70dp"
                         android:layout_height="@dimen/JoinUserTextviewHeight"
                         app:srcCompat="@drawable/join_checkbtn"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="10dp"
                         android:adjustViewBounds="true"
                         app:layout_constraintDimensionRatio="1:1"
                         android:layout_gravity="right|center"
@@ -82,13 +82,14 @@
                     android:layout_margin="@dimen/JoinMargin"
                     >
                     <TextView
-                        android:layout_width="@dimen/JoinUserTextviewWidth"
+                        android:layout_width="48dp"
                         android:layout_height="@dimen/JoinUserTextviewHeight"
                         android:text="비밀번호"
                         android:textSize="13dp"
                         android:gravity="left|center"
                         android:layout_gravity="left"
-                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="15dp"
                         />
 
                     <EditText
@@ -97,7 +98,6 @@
                         android:layout_height="@dimen/JoinUserTextviewHeight"
                         android:imeOptions="actionNext"
                         android:background="@drawable/join_cardedittext"
-                        android:layout_gravity="center"
                         android:inputType="textPassword"
                         android:paddingLeft="10dp"
                         />
@@ -112,13 +112,16 @@
                 android:layout_margin="@dimen/JoinMargin"
                 >
                 <TextView
-                    android:layout_width="@dimen/JoinUserTextviewWidth"
-                    android:layout_height="@dimen/JoinUserTextviewHeight"
-                    android:layout_marginLeft="6dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:gravity="left|center"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
                     />
                 <EditText
                     android:id="@+id/editTextPwdReCheck"
-                    android:layout_width="@dimen/JoinPwdEditTextWidth"
+                    android:layout_width="268dp"
                     android:layout_height="@dimen/JoinUserTextviewHeight"
                     android:imeOptions="actionNext"
                     android:background="@drawable/join_cardedittext"
@@ -138,7 +141,7 @@
                     >
 
                     <TextView
-                        android:layout_width="@dimen/JoinUserTextviewWidth"
+                        android:layout_width="60dp"
                         android:layout_height="@dimen/JoinUserTextviewHeight"
                         android:text="닉네임"
                         android:textSize="13dp"
@@ -158,7 +161,7 @@
                         android:id="@+id/usernameCheckBtn"
                         android:layout_width="70dp"
                         android:layout_height="@dimen/JoinUserTextviewHeight"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="10dp"
                         android:adjustViewBounds="true"
                         app:layout_constraintDimensionRatio="1:1"
                         android:layout_gravity="right|center"
@@ -195,7 +198,7 @@
                 android:layout_marginTop="30dp">
 
                 <TextView
-                    android:layout_width="340dp"
+                    android:layout_width="330dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_gravity="center"
@@ -234,9 +237,9 @@
                         android:layout_weight="0.25"
                         android:imeOptions="actionNext"
                         android:inputType="textNoSuggestions"
-                        android:paddingLeft="10dp"
+                        android:paddingLeft="15dp"
                         android:background="@drawable/join_cardnumedittext"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginRight="20dp"
                         />
 
                     <EditText
@@ -248,7 +251,7 @@
                         android:inputType="textNoSuggestions"
                         android:paddingLeft="10dp"
                         android:background="@drawable/join_cardnumedittext"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginRight="20dp"
                         />
 
                     <EditText
@@ -260,7 +263,7 @@
                         android:inputType="textNoSuggestions"
                         android:paddingLeft="10dp"
                         android:background="@drawable/join_cardnumedittext"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginRight="20dp"
                         />
 
                     <EditText
@@ -272,7 +275,6 @@
                         android:inputType="textNoSuggestions"
                         android:paddingLeft="10dp"
                         android:background="@drawable/join_cardnumedittext"
-                        android:layout_marginRight="10dp"
                         />
                 </LinearLayout>
 
@@ -318,7 +320,7 @@
                         android:layout_width="0dp"
                         android:layout_height="@dimen/cardEditTextHeight"
                         android:layout_gravity="center"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginRight="17dp"
                         android:layout_weight="0.45"
                         android:background="@drawable/join_cardyearspinner"
                         android:paddingLeft="10dp"></Spinner>
@@ -327,22 +329,22 @@
                         android:id="@+id/monthSpinner"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/cardEditTextHeight"
-                        android:layout_weight="0.25"
-                        android:background="@drawable/join_cardyearspinner"
+                        android:layout_weight="0.27"
+                        android:background="@drawable/join_cardmonthspinner"
                         android:paddingLeft="5dp"
                         android:layout_gravity="center"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginRight="17dp"
                         ></Spinner>
 
-                    <!--<Spinner-->
-                        <!--android:id="@+id/daySpinner"-->
-                        <!--android:layout_width="0dp"-->
-                        <!--android:layout_height="@dimen/cardEditTextHeight"-->
-                        <!--android:layout_weight="0.25"-->
-                        <!--android:background="@drawable/join_cardyearspinner"-->
-                        <!--android:paddingLeft="5dp"-->
-                        <!--android:layout_gravity="center"-->
-                        <!--&gt;</Spinner>-->
+                    <Spinner
+                        android:id="@+id/daySpinner"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/cardEditTextHeight"
+                        android:layout_weight="0.27"
+                        android:background="@drawable/join_carddayspinner"
+                        android:paddingLeft="5dp"
+                        android:layout_gravity="center"
+                        ></Spinner>
                 </LinearLayout>
                 <TextView
                     android:layout_width="@dimen/cardLayoutWidth"

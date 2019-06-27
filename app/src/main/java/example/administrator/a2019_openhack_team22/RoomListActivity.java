@@ -6,18 +6,21 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TabHost;
 
 
 public class RoomListActivity extends AppCompatActivity {
 
-    Button btnAddNew1, btnAddNew2, btnAddNew3;  // 목표를 추가하는 다이얼로그 창 띄우기 위한 버튼
+    ImageView btnAddNew1, btnAddNew2, btnAddNew3;  // 목표를 추가하는 다이얼로그 창 띄우기 위한 버튼
+    ImageView sevendayfilter, onemonthfilter, threemonthfilter;
     EditText editSearch1, editSearch2, editSearch3;    // 검색
     ListView listView1, listView2, listView3=null;
 
@@ -44,13 +47,23 @@ public class RoomListActivity extends AppCompatActivity {
         listView3.setAdapter(adapter3);
 
         // 위젯 연결
-        btnAddNew1 = (Button) findViewById(R.id.btnAddNew1);
-        btnAddNew2 = (Button) findViewById(R.id.btnAddNew2);
-        btnAddNew3 = (Button) findViewById(R.id.btnAddNew3);
+        btnAddNew1 = (ImageView) findViewById(R.id.btnAddNew1);
+        btnAddNew2 = (ImageView) findViewById(R.id.btnAddNew2);
+        btnAddNew3 = (ImageView) findViewById(R.id.btnAddNew3);
         editSearch1 = (EditText) findViewById(R.id.autoCompleteTextView1);
         editSearch2 = (EditText) findViewById(R.id.autoCompleteTextView2);
         editSearch3 = (EditText) findViewById(R.id.autoCompleteTextView3);
 
+        sevendayfilter = (ImageView) findViewById(R.id.sevenDayListFilter);
+        onemonthfilter = (ImageView) findViewById(R.id.oneMonthListFilter);
+        threemonthfilter = (ImageView) findViewById(R.id.threeMonthListFilter);
+
+        sevendayfilter.setOnTouchListener(touchListener);
+        onemonthfilter.setOnTouchListener(touchListener);
+        threemonthfilter.setOnTouchListener(touchListener);
+        btnAddNew1.setOnTouchListener(touchListener);
+        btnAddNew2.setOnTouchListener(touchListener);
+        btnAddNew3.setOnTouchListener(touchListener);
 
         // 탭호스트 설정--------------------------------------------------
         TabHost tabHost1 = (TabHost) findViewById(R.id.tabHost1) ;
@@ -133,7 +146,6 @@ public class RoomListActivity extends AppCompatActivity {
             }
         }) ;
 
-
         // 검색 기능 및 리스트뷰 구현 - 3개월
         adapter3.addItem("HTML마스터하기", "컴맹") ;
         adapter3.addItem("3개월간 10kg 빼자!!", "취미는자전거타기") ;
@@ -159,34 +171,50 @@ public class RoomListActivity extends AppCompatActivity {
             }
         }) ;
 
-
-
-        // 목표 추가로 화면 전환
-        btnAddNew1.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                Intent intent = new Intent(RoomListActivity.this, AddRoomActivity.class);
-                startActivity(intent);	//새로운 액티비티를 화면에 출력
-            }
-        });
-
-        btnAddNew2.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                Intent intent = new Intent(RoomListActivity.this, AddRoomActivity.class);
-                startActivity(intent);	//새로운 액티비티를 화면에 출력
-
-            }
-        });
-
-        btnAddNew3.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                Intent intent = new Intent(RoomListActivity.this, AddRoomActivity.class);
-                startActivity(intent);	//새로운 액티비티를 화면에 출력
-
-            }
-        });
-
     }
+    private View.OnTouchListener touchListener = new View.OnTouchListener() {
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            ImageView image = (ImageView) v;
+            switch (v.getId()) {
+                case R.id.sevenDayListFilter:
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
+                        image.setImageResource(R.drawable.list_sevendayfilterclick);
+                        onemonthfilter.setImageResource(R.drawable.list_onemonthfilter);
+                        threemonthfilter.setImageResource(R.drawable.list_threemonthfilter);
+                        return true;
+                        //if()
+                    } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
+
+                    }
+                    break;
+                case R.id.oneMonthListFilter:
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
+                        image.setImageResource(R.drawable.list_onemonthfilterclick);
+                        sevendayfilter.setImageResource(R.drawable.list_sevendayfilter);
+                        threemonthfilter.setImageResource(R.drawable.list_threemonthfilter);;
+                        return true;
+                    } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
+                    }
+                    break;
+                case R.id.threeMonthListFilter:
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
+                        image.setImageResource(R.drawable.list_threemonthfilterclick);
+                        onemonthfilter.setImageResource(R.drawable.list_onemonthfilter);
+                        sevendayfilter.setImageResource(R.drawable.list_sevendayfilter);
+                        return true;
+                    } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
+                        image.setImageResource(R.drawable.addroom_threemonthbtn);
+                    }
+                    break;
+                case R.id.btnAddNew1:
+                case R.id.btnAddNew2:
+                case R.id.btnAddNew3:
+                    Intent intent = new Intent(RoomListActivity.this, AddRoomActivity.class);
+                    startActivity(intent);	//새로운 액티비티를 화면에 출력
+                    break;
+            }
+            return false;
+        }
+    };
 }

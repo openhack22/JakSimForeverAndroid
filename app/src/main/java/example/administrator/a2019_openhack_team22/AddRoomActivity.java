@@ -96,7 +96,8 @@ public class AddRoomActivity extends AppCompatActivity {
 //            Toast.makeText(getApplicationContext(), "타입이 선택되지 않았습니다. 이전 화면으로 돌아갑니다.", Toast.LENGTH_LONG).show();
 //            finish();
 //        }
-
+        userID = "temp";
+        money = 0;
         // seekMoneyBar.incrementProgressBy(1000);
         // seekBar의 상태를 변경할 때
         seekMoneyBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -137,6 +138,15 @@ public class AddRoomActivity extends AppCompatActivity {
                 startActivity(intent);	//새로운 액티비티를 화면에 출력
             }
         });
+
+        ivSevenDay.setOnTouchListener(touchListener);
+        ivOneMonth.setOnTouchListener(touchListener);
+        ivThreeMonth.setOnTouchListener(touchListener);
+        ivThreePeople.setOnTouchListener(touchListener);
+        ivFourPeople.setOnTouchListener(touchListener);
+        ivFivePeople.setOnTouchListener(touchListener);
+        ivSixPeople.setOnTouchListener(touchListener);
+        addRoomBtn.setOnTouchListener(touchListener);
     }
 
     // 각 ImageView 클릭에 따른 리스너 묶음 변수 선언
@@ -149,14 +159,19 @@ public class AddRoomActivity extends AppCompatActivity {
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         duration = 1;
                         image.setImageResource(R.drawable.addroom_sevendaybtnclick);
+                        ivOneMonth.setImageResource(R.drawable.addroom_onemonthbtn);
+                        ivThreeMonth.setImageResource(R.drawable.addroom_threemonthbtn);
+                        //if()
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
-                        // image.setImageResource(R.drawable.addroom_sevendaybtn);
+
                     }
                     break;
                 case R.id.oneMonthBtn:
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         duration = 2;
                         image.setImageResource(R.drawable.addroom_onemonthbtnclick);
+                        ivSevenDay.setImageResource(R.drawable.addroom_sevendaybtn);
+                        ivThreeMonth.setImageResource(R.drawable.addroom_threemonthbtn);
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
                         image.setImageResource(R.drawable.addroom_onemonthbtn);
                     }
@@ -165,6 +180,8 @@ public class AddRoomActivity extends AppCompatActivity {
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         duration = 3;
                         image.setImageResource(R.drawable.addroom_threemonthbtnclick);
+                        ivOneMonth.setImageResource(R.drawable.addroom_onemonthbtn);
+                        ivSevenDay.setImageResource(R.drawable.addroom_sevendaybtn);
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
                         image.setImageResource(R.drawable.addroom_threemonthbtn);
                     }
@@ -173,6 +190,9 @@ public class AddRoomActivity extends AppCompatActivity {
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         userNum = 1;
                         image.setImageResource(R.drawable.addroom_threebtnclick);
+                        ivFourPeople.setImageResource(R.drawable.addroom_fourbtn);
+                        ivFivePeople.setImageResource(R.drawable.addroom_fivebtn);
+                        ivSixPeople.setImageResource(R.drawable.addroom_sixbtn);
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
                         image.setImageResource(R.drawable.addroom_threebtn);
                     }
@@ -181,6 +201,9 @@ public class AddRoomActivity extends AppCompatActivity {
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         userNum = 2;
                         image.setImageResource(R.drawable.addroom_fourbtnclick);
+                        ivThreePeople.setImageResource(R.drawable.addroom_threebtn);
+                        ivFivePeople.setImageResource(R.drawable.addroom_fivebtn);
+                        ivSixPeople.setImageResource(R.drawable.addroom_sixbtn);
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
                         image.setImageResource(R.drawable.addroom_fourbtn);
                     }
@@ -189,6 +212,9 @@ public class AddRoomActivity extends AppCompatActivity {
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         userNum = 3;
                         image.setImageResource(R.drawable.addroom_fivebtnclick);
+                        ivThreePeople.setImageResource(R.drawable.addroom_threebtn);
+                        ivFourPeople.setImageResource(R.drawable.addroom_fourbtn);
+                        ivSixPeople.setImageResource(R.drawable.addroom_sixbtn);
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
                         image.setImageResource(R.drawable.addroom_fivebtn);
                     }
@@ -197,8 +223,11 @@ public class AddRoomActivity extends AppCompatActivity {
                     if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
                         userNum = 4;
                         image.setImageResource(R.drawable.addroom_sixbtnclick);
+                        ivThreePeople.setImageResource(R.drawable.addroom_threebtn);
+                        ivFourPeople.setImageResource(R.drawable.addroom_fourbtn);
+                        ivFivePeople.setImageResource(R.drawable.addroom_fivebtn);
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
-                         image.setImageResource(R.drawable.addroom_sixbtn);
+                        image.setImageResource(R.drawable.addroom_sixbtn);
                     }
                     break;
                 case R.id.addRoomBtn:
@@ -335,7 +364,7 @@ public class AddRoomActivity extends AppCompatActivity {
                 if(jsonObject.get("result") == null)
                     Log.d(TAG, "방 생성 실패! result 안담김");
                 else {
-                    if(jsonObject.get("result").toString().equals("OK")) {
+                    if(jsonObject.get("result").toString().equals("200")) {
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.putExtra("id", strId);
                         intent.putExtra("username", strUserName);

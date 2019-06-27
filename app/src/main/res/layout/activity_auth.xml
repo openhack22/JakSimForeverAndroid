@@ -28,6 +28,7 @@
                 android:scaleType="centerCrop"
                 app:layout_constraintDimensionRatio="1:1"
                 app:srcCompat="@drawable/auth_camerabtn"
+                android:background="@drawable/auth_shadow_32032"
                 />
 
             <ImageView
@@ -61,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"

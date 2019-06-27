@@ -14,11 +14,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="35" />
-                            <entry key="outputName" value="room_authbtn" />
+                            <entry key="height" value="13" />
+                            <entry key="outputName" value="list_searchbtn" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\Administrator\Desktop\openhack\auth\room_authbtn.svg" />
-                            <entry key="width" value="109" />
+                            <entry key="sourceFile" value="C:\Users\Administrator\Desktop\openhack\list\list_searchbtn.svg" />
+                            <entry key="width" value="13" />
                           </map>
                         </option>
                       </PersistentState>
