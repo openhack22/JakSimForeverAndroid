@@ -33,6 +33,8 @@
             android:theme="@style/NoTheme"></activity>
         <activity android:name=".AwardActivity"
             android:theme="@style/NoTheme"></activity>
+        <activity android:name=".RoomListActivity"
+            android:theme="@style/NoTheme"></activity>
     </application>
 
 </manifest>

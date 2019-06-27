@@ -44,7 +44,10 @@ public class MainActivity extends AppCompatActivity {
         numGoal = (TextView) findViewById(R.id.numGoal);
         btnJoin = (Button) findViewById(R.id.btnJoin);
 
-        // TODO:userName DB에서 받아와 표시 : userName
+        // userName login 액티비티에서 받아와 표시 : userName
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("username");
+        userName.setText(username);
 
 
         // TODO:얻은 돈, 잃은 돈 DB에서 받아와 표시 : plusMoney, minusMoney
