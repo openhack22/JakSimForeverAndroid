@@ -2,6 +2,8 @@ package example.administrator.a2019_openhack_team22;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +11,7 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +48,7 @@ public class RoomActivity extends AppCompatActivity {
     TextView txtProgress3;
 
     Button btnAuth;
+    Bitmap bitmap;
 
     String strId, strUserName, strGoalId;
     String SERVER_URL = "http://10.10.2.88:5000";
@@ -85,7 +89,7 @@ public class RoomActivity extends AppCompatActivity {
         btnAuth.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(RoomActivity.this, AuthActivity.class);
-                startActivity(intent);	//새로운 액티비티를 화면에 출력
+                startActivityForResult(intent, 0);	//새로운 액티비티를 화면에 출력
             }
         });
 
@@ -230,4 +234,17 @@ public class RoomActivity extends AppCompatActivity {
         String response = new String(byteData);
         Log.d(TAG, "응답 코드 발생! 오류 내용 = " + response);
     }
+
+    @Override
+    //세컨드 액티비티의 setResult()에서 값을 전달하면 onActivityResult()메소드를 실행한다.
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (resultCode == RESULT_OK) {	//setResult()에서 보낸 값이 RESULT_OK이면
+            byte[] img = data.getByteArrayExtra("image"); // 인텐트(data)의  “image” 값을 가져옴.
+//            bitmap = BitmapFactory.decodeByteArray( img, 0, img.length ) ;
+            //ImageView.setImageBitmap(bitmap); // 이미지뷰에 비트맵 형식으로 표시
+        }
+    }
+
+    // TODO: 이미지 데이터 bytearray형태로 넘기기
 }

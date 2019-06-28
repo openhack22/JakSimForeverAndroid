@@ -20,7 +20,7 @@ import android.widget.TabHost;
 public class RoomListActivity extends AppCompatActivity {
 
     ImageView btnAddNew1, btnAddNew2, btnAddNew3;  // 목표를 추가하는 다이얼로그 창 띄우기 위한 버튼
-    ImageView sevendayfilter, onemonthfilter, threemonthfilter;
+//    ImageView sevendayfilter, onemonthfilter, threemonthfilter;
     EditText editSearch1, editSearch2, editSearch3;    // 검색
     ListView listView1, listView2, listView3=null;
 
@@ -54,13 +54,13 @@ public class RoomListActivity extends AppCompatActivity {
         editSearch2 = (EditText) findViewById(R.id.autoCompleteTextView2);
         editSearch3 = (EditText) findViewById(R.id.autoCompleteTextView3);
 
-        sevendayfilter = (ImageView) findViewById(R.id.sevenDayListFilter);
-        onemonthfilter = (ImageView) findViewById(R.id.oneMonthListFilter);
-        threemonthfilter = (ImageView) findViewById(R.id.threeMonthListFilter);
-
-        sevendayfilter.setOnTouchListener(touchListener);
-        onemonthfilter.setOnTouchListener(touchListener);
-        threemonthfilter.setOnTouchListener(touchListener);
+//        sevendayfilter = (ImageView) findViewById(R.id.sevenDayListFilter);
+//        onemonthfilter = (ImageView) findViewById(R.id.oneMonthListFilter);
+//        threemonthfilter = (ImageView) findViewById(R.id.threeMonthListFilter);
+//
+//        sevendayfilter.setOnTouchListener(touchListener);
+//        onemonthfilter.setOnTouchListener(touchListener);
+//        threemonthfilter.setOnTouchListener(touchListener);
         btnAddNew1.setOnTouchListener(touchListener);
         btnAddNew2.setOnTouchListener(touchListener);
         btnAddNew3.setOnTouchListener(touchListener);
@@ -177,36 +177,36 @@ public class RoomListActivity extends AppCompatActivity {
         public boolean onTouch(View v, MotionEvent event) {
             ImageView image = (ImageView) v;
             switch (v.getId()) {
-                case R.id.sevenDayListFilter:
-                    if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
-                        image.setImageResource(R.drawable.list_sevendayfilterclick);
-                        onemonthfilter.setImageResource(R.drawable.list_onemonthfilter);
-                        threemonthfilter.setImageResource(R.drawable.list_threemonthfilter);
-                        return true;
-                        //if()
-                    } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
-
-                    }
-                    break;
-                case R.id.oneMonthListFilter:
-                    if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
-                        image.setImageResource(R.drawable.list_onemonthfilterclick);
-                        sevendayfilter.setImageResource(R.drawable.list_sevendayfilter);
-                        threemonthfilter.setImageResource(R.drawable.list_threemonthfilter);;
-                        return true;
-                    } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
-                    }
-                    break;
-                case R.id.threeMonthListFilter:
-                    if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
-                        image.setImageResource(R.drawable.list_threemonthfilterclick);
-                        onemonthfilter.setImageResource(R.drawable.list_onemonthfilter);
-                        sevendayfilter.setImageResource(R.drawable.list_sevendayfilter);
-                        return true;
-                    } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
-                        image.setImageResource(R.drawable.addroom_threemonthbtn);
-                    }
-                    break;
+//                case R.id.sevenDayListFilter:
+//                    if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
+//                        image.setImageResource(R.drawable.list_sevendayfilterclick);
+//                        onemonthfilter.setImageResource(R.drawable.list_onemonthfilter);
+//                        threemonthfilter.setImageResource(R.drawable.list_threemonthfilter);
+//                        return true;
+//                        //if()
+//                    } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
+//
+//                    }
+//                    break;
+//                case R.id.oneMonthListFilter:
+//                    if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
+//                        image.setImageResource(R.drawable.list_onemonthfilterclick);
+//                        sevendayfilter.setImageResource(R.drawable.list_sevendayfilter);
+//                        threemonthfilter.setImageResource(R.drawable.list_threemonthfilter);;
+//                        return true;
+//                    } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
+//                    }
+//                    break;
+//                case R.id.threeMonthListFilter:
+//                    if (event.getAction() == MotionEvent.ACTION_DOWN) { // 클릭 O
+//                        image.setImageResource(R.drawable.list_threemonthfilterclick);
+//                        onemonthfilter.setImageResource(R.drawable.list_onemonthfilter);
+//                        sevendayfilter.setImageResource(R.drawable.list_sevendayfilter);
+//                        return true;
+//                    } else if (event.getAction() == MotionEvent.ACTION_UP) {    // 클릭 X
+//                        image.setImageResource(R.drawable.addroom_threemonthbtn);
+//                    }
+//                    break;
                 case R.id.btnAddNew1:
                 case R.id.btnAddNew2:
                 case R.id.btnAddNew3:
