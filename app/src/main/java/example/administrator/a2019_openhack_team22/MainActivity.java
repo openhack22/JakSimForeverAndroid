@@ -5,11 +5,13 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,7 +33,8 @@ public class MainActivity extends FontActivity {
     public static final String TAG = "LogTest";
 
     TextView userName, plusMoney, minusMoney, numGoal;  // 사용자 닉네임, 얻은 돈, 잃은 돈, 참여중인 공동목표
-    Button btnJoin; // 공동목표 참여하기 버튼
+    TextView myMoney;
+    ImageView btnJoin, imgArrowRefund; // 공동목표 참여하기 버튼
     ListView mainList;
     String strUserName, strId;
     String SERVER_URL = "http://10.10.2.88:5000";
@@ -51,9 +54,12 @@ public class MainActivity extends FontActivity {
         minusMoney = (TextView) findViewById(R.id.minusMoney);
         userName = (TextView) findViewById(R.id.name);
         numGoal = (TextView) findViewById(R.id.numGoal);
-        btnJoin = (Button) findViewById(R.id.btnJoin);
+        btnJoin = (ImageView) findViewById(R.id.btnJoin);
+        imgArrowRefund = findViewById(R.id.img_amount);
         mainList = findViewById(R.id.main_list);
+        myMoney =findViewById(R.id.myMoney);
         mainList.setAdapter(mainAdapter);
+        mainAdapter.addItem(new ListMainItem(1, "수영하기", 89));
 
         // userName login 액티비티에서 받아와 표시 : userName
         Intent intent = getIntent();
@@ -61,6 +67,14 @@ public class MainActivity extends FontActivity {
         strId = intent.getStringExtra("id");
         userName.setText(strUserName);
 
+        imgArrowRefund.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Toast.makeText(MainActivity.this, myMoney.getText().toString() + "원을 입금받았습니다.", Toast.LENGTH_SHORT).show();
+                myMoney.setText("0");
+                return false;
+            }
+        });
         getRoomAsyncTask.execute("/getMyList");
 
         // TODO:얻은 돈, 잃은 돈 DB에서 받아와 표시 : plusMoney, minusMoney

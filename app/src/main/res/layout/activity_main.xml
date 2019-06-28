@@ -30,26 +30,259 @@
             android:orientation="horizontal"
             >
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
+            <FrameLayout
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:text="User"
-                android:gravity="top"
-                android:textSize="24dp"
-                android:textStyle="bold"
-                android:padding="10dp"
-                />
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="@dimen/MainLayoutMargin"
+                android:layout_marginRight="@dimen/MainLayoutMargin"
+                >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" 님"
-                android:textSize="15dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/main_user"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="10dp"
+                            android:text="User"
+                            android:textSize="27dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" 님"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:layout_gravity="right|bottom"
+                        android:gravity="right"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="right|bottom"
+                            android:fontFamily="@font/notosansbold"
+                            android:textFontWeight="bold"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20dp"
+                            android:text="잔고"
+                            />
+
+                        <TextView
+                            android:id="@+id/myMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="right|bottom"
+                            android:fontFamily="@font/notosansbold"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20dp"
+                            android:layout_marginLeft="13dp"
+                            android:text="1000"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="right|bottom"
+                            android:fontFamily="@font/notosansbold"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20dp"
+                            android:layout_marginRight="6dp"
+                            android:text="원"
+                            />
+
+                        <ImageView
+                            android:id="@+id/img_arrow_refund"
+                            android:layout_width="15dp"
+                            android:layout_height="20dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="bottom"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:srcCompat="@drawable/ic_main_moneybar" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_marginTop="200dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:gravity="center">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="0.3"
+                >
+
+                <ImageView
+                    android:id="@+id/img_duration"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:layout_gravity="center"
+
+                    app:srcCompat="@drawable/room_calendar"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_duration"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textSize="13dp"
+                    android:text="성취 목표"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="0.3"
+                >
+                <ImageView
+                    android:id="@+id/img_amount"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/room_money"
+                    android:layout_gravity="center"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_amount"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textSize="13dp"
+                    android:text="얻은 돈"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="0.3">
+                <ImageView
+                    android:id="@+id/img_user_limit"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/room_people"
+                    android:layout_gravity="center"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_user_limit"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="잃은 돈"
+                    android:layout_marginTop="8dp"
+                    android:textSize="13dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/txt_user_goal"
+                        android:textAlignment="center"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="0개"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"
+                        android:textSize="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/plusMoney"
+                        android:textAlignment="center"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="0원"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"
+                        android:textSize="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/minusMoney"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="0원"
+                        android:layout_marginTop="8dp"
+                        android:textSize="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,124 +290,53 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="얻은 돈"
-                    android:gravity="center"
-                    android:background="#DADADA"
-                    android:padding="4dp"/>
-
-                <TextView
-                    android:id="@+id/plusMoney"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0원"
-                    android:padding="4dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="잃은 돈"
-                    android:gravity="center"
-                    android:background="#DADADA"
-                    android:padding="4dp"/>
-
-                <TextView
-                    android:id="@+id/minusMoney"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0원"
-                    android:padding="4dp"/>
-
-            </LinearLayout>
-
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_margin="8dp"
-            android:padding="8dp"
-            android:background="#DADADA">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="잔고"
-                android:layout_weight="5"/>
-
-            <TextView
-                android:id="@+id/myMoney"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0원"
-                android:layout_weight="1"/>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_margin="8dp"
+            android:gravity="left"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:padding="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="15dp"
                 android:text="참여중인 공동목표 : "/>
 
             <TextView
                 android:id="@+id/numGoal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4개"/>
+                android:textSize="15dp"
+                android:text="1개"/>
         </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="8dp">
-                <Button
-                    android:id="@+id/btnJoin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="공동목표 참여하기"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"/>
-                <ListView
-                    android:id="@+id/main_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="#D4D4D4"></View>
 
+        <ListView
+            android:id="@+id/main_list"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+        </ListView>
+    </LinearLayout>
 
-                </ListView>
-
-
-
-
-            </LinearLayout>
-    </LinearLayout>Android
-
+    <ImageView
+        android:id="@+id/btnJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="7dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintDimensionRatio="1:1"
+        app:srcCompat="@drawable/main_participate"/>
 </FrameLayout>

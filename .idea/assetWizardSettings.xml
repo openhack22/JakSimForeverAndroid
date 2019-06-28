@@ -14,11 +14,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="65" />
-                            <entry key="outputName" value="room_calendar" />
+                            <entry key="height" value="23" />
+                            <entry key="outputName" value="ic_main_progressbar" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\Administrator\Desktop\openhack\room\room_calendar.svg" />
-                            <entry key="width" value="65" />
+                            <entry key="sourceFile" value="C:\Users\Administrator\Desktop\openhack\main\main_progressbar.svg" />
+                            <entry key="width" value="26" />
                           </map>
                         </option>
                       </PersistentState>

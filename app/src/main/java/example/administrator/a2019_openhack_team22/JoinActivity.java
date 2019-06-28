@@ -162,11 +162,15 @@ public class JoinActivity extends FontActivity {
                     case MotionEvent.ACTION_DOWN:   // 클릭 시
                         if(checkUserInfo()) {
                             if(checkCardInfo()) {
-                                cancelAsyncTask(joinAsyncTask);
+                                if(joinAsyncTask.getStatus() == AsyncTask.Status.RUNNING) {
+                                    joinAsyncTask.cancel(true);
+                                }
                                 joinAsyncTask.execute("/regist", "joinAndCard");
                             }
                             else {
-                                cancelAsyncTask(joinAsyncTask);
+                                if(joinAsyncTask.getStatus() == AsyncTask.Status.RUNNING) {
+                                    joinAsyncTask.cancel(true);
+                                }
                                 joinAsyncTask.execute("/regist", "join");
                             }
                         }
@@ -183,7 +187,9 @@ public class JoinActivity extends FontActivity {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:   // 클릭 시
                         hasCheckID = false;
-                        cancelAsyncTask(joinAsyncTask);
+                        if(joinAsyncTask.getStatus() == AsyncTask.Status.RUNNING) {
+                            joinAsyncTask.cancel(true);
+                        }
                         userID = eID.getText().toString();
                         joinAsyncTask.execute("/checkID", "checkID");
                         break;
@@ -199,7 +205,9 @@ public class JoinActivity extends FontActivity {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:   // 클릭 시
                         hasCheckUsername = false;
-                        cancelAsyncTask(joinAsyncTask);
+                        if(joinAsyncTask.getStatus() == AsyncTask.Status.RUNNING) {
+                            joinAsyncTask.cancel(true);
+                        }
                         username = eUsername.getText().toString();
                         joinAsyncTask.execute("/checkUsername", "checkUsername");
                         break;
@@ -353,30 +361,32 @@ public class JoinActivity extends FontActivity {
                     if(jsonObject.get("result") == null)
                         Log.d(TAG, "회원가입 실패! 이유 : result is null");
                     else {  // 회원가입 성공
-                       if(jsonObject.getString("result").equals("OK")) {
+                       if(jsonObject.getString("result").equals("200")) {
                            Intent intent = new Intent();
                            intent.putExtra("id", userID);
                            intent.putExtra("pwd", pwd);
+                           Toast.makeText(getApplicationContext(), "회원 가입에 성공했습니다!", Toast.LENGTH_LONG).show();
                            setResult(RESULT_OK, intent);
                        }
                     }
                 }
                 else if(type.equals("checkID")) {   // ID 중복검사
                     if(jsonObject.get("result") == null)
-                        Log.d(TAG, "ID가 중복되었습니다.");
+                        Toast.makeText(getApplicationContext(), "ID가 중복되었습니다!", Toast.LENGTH_LONG).show();
                     else {  // 중복검사 통과
-                        if(jsonObject.getString("result").equals("OK")) {
+                        if(jsonObject.getString("result").equals("200")) {
                             Log.d(TAG, "중복된 ID가 없습니다.");
+                            Toast.makeText(getApplicationContext(), "중복된 ID가 없습니다!", Toast.LENGTH_LONG).show();
                             hasCheckID = true;
                         }
                     }
                 }
                 else if(type.equals("checkUsername")) { // username 중복검사
                     if(jsonObject.get("result") == null)
-                        Log.d(TAG, "닉네임이 중복되었습니다.");
+                        Toast.makeText(getApplicationContext(), "닉네임이 중복되었습니다!", Toast.LENGTH_LONG).show();
                     else {  // 중복검사 통과
-                        if(jsonObject.getString("result").equals("OK")) {
-                            Log.d(TAG, "중복된 닉네임이 없습니다.");
+                        if(jsonObject.getString("result").equals("200")) {
+                            Toast.makeText(getApplicationContext(), "중복된 닉네임이 없습니다!", Toast.LENGTH_LONG).show();
                             hasCheckUsername = true;
                         }
                     }
@@ -482,8 +492,6 @@ public class JoinActivity extends FontActivity {
     AsyncTask 실행 여부 체크해서 종료시키기
      */
     private void cancelAsyncTask(JoinAsyncTask joinAsyncTask) {
-        if(joinAsyncTask.getStatus() == AsyncTask.Status.RUNNING) {
-            joinAsyncTask.cancel(true);
-        }
+
     }
 }

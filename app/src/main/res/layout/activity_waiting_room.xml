@@ -14,11 +14,11 @@
         >
 
         <TextView
-            android:id="@+id/txt_goal_title"
+            android:id="@+id/txt_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="goalTitle"
-            android:textSize="25dp"/>
+            android:textSize="26dp"/>
 
         <TextView
             android:id="@+id/txt_user_name"
@@ -161,7 +161,7 @@
     .<ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_join"
+        android:id="@+id/btnJoin"
         android:layout_marginTop="25dp"
         android:layout_gravity="right"
         android:layout_marginRight="30dp"

@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -46,7 +47,8 @@ public class WaitingRoomActivity extends FontActivity {
     ImageView imgAmount;        // 금액 아이콘
     ImageView imgUserLimit;     // 인원 제한 아이콘
 
-    ImageView btnJoin;             // 참여하기 버튼
+    ImageView btnJoin;
+    // Button btnJoin;             // 참여하기 버튼
 
     String strId, strUserName, goalId;
     String SERVER_URL = "http://10.10.2.88:5000";
@@ -73,8 +75,14 @@ public class WaitingRoomActivity extends FontActivity {
         imgDuration = findViewById(R.id.img_duration);
         imgAmount = findViewById(R.id.img_amount);
         imgUserLimit = findViewById(R.id.img_user_limit);
-        btnJoin = findViewById(R.id.btn_join);
+        btnJoin = findViewById(R.id.btnJoin);
 
+        btnJoin.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return false;
+            }
+        });
         btnJoin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
