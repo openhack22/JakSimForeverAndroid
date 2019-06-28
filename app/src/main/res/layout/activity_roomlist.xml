@@ -200,7 +200,11 @@
                         android:layout_height="450dp"
                         android:layout_below="@id/autoCompleteTextView2"
                         android:textFilterEnabled="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
                         android:id="@+id/listview3"/>
+
 
                     <ImageView
                         android:id="@+id/btnAddNew3"
