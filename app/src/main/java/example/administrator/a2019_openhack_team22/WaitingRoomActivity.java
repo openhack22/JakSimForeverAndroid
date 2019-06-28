@@ -46,7 +46,7 @@ public class WaitingRoomActivity extends FontActivity {
     ImageView imgAmount;        // 금액 아이콘
     ImageView imgUserLimit;     // 인원 제한 아이콘
 
-    Button btnJoin;             // 참여하기 버튼
+    ImageView btnJoin;             // 참여하기 버튼
 
     String strId, strUserName, goalId;
     String SERVER_URL = "http://10.10.2.88:5000";
@@ -65,7 +65,7 @@ public class WaitingRoomActivity extends FontActivity {
 
         txtUserName = findViewById(R.id.txt_user_name);
         txtStartDate = findViewById(R.id.txt_start_date);
-        txtTitle = findViewById(R.id.txt_title);
+        txtTitle = findViewById(R.id.txt_goal_title);
         txtDuration = findViewById(R.id.txt_duration);
         txtAmount = findViewById(R.id.txt_amount);
         txtUserLimit = findViewById(R.id.txt_user_limit);
