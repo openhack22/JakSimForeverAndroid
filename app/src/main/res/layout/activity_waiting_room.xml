@@ -77,7 +77,7 @@
                 android:textAlignment="center"
                 android:gravity="center"
                 android:layout_marginTop="8dp"
-                android:textSize="11dp"
+                android:textSize="15dp"
                 android:text="0일"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -104,7 +104,7 @@
                 android:textAlignment="center"
                 android:gravity="center"
                 android:layout_marginTop="8dp"
-                android:textSize="11dp"
+                android:textSize="15dp"
                 android:text="30,000원"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -132,7 +132,7 @@
                 android:gravity="center"
                 android:text="0/4인"
                 android:layout_marginTop="8dp"
-                android:textSize="11dp"
+                android:textSize="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -158,7 +158,7 @@
         android:textSize="18dp"
         />
 
-    .<ImageView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnJoin"

@@ -16,15 +16,13 @@
             android:theme="@style/NoTheme" />
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/NoTheme">
-        </activity>
+            android:theme="@style/NoTheme"></activity>
         <activity
             android:name=".AddRoomActivity"
-            android:theme="@style/NoTheme">
-        </activity>
+            android:theme="@style/NoTheme"></activity>
         <activity
             android:name=".JoinActivity"
-            android:theme="@style/NoTheme"></activity>
+            android:theme="@style/NoTheme" />
         <activity
             android:name=".WaitingRoomActivity"
             android:theme="@style/NoTheme" />
@@ -42,17 +40,14 @@
         </activity>
         <activity
             android:name=".RoomListActivity"
-            android:theme="@style/NoTheme">
-        </activity>
+            android:theme="@style/NoTheme"></activity>
         <activity
             android:name=".AuthActivity"
-            android:theme="@style/NoTheme">
-        </activity>
-        <activity android:name=".AwardActivity"
-            android:theme="@style/NoTheme"
-            >
-
-        </activity>
+            android:theme="@style/NoTheme"></activity>
+        <activity
+            android:name=".AwardActivity"
+            android:theme="@style/NoTheme"></activity>
+        <activity android:name=".RoomHistoryActivity"></activity>
     </application>
 
 </manifest>

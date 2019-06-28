@@ -4,23 +4,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="40dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/txt_goal_title"
-        android:layout_margin="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="goalTitle"
-        android:textSize="20dp"
+        android:text="토익 900점 넘자"
+        android:textSize="26dp"
+        android:fontFamily="@font/notosansbold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
         android:layout_gravity="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -31,20 +34,19 @@
             android:layout_weight="1">
             <ImageView
                 android:id="@+id/img_amount"
-                app:layout_constraintTop_toBottomOf="@id/txt_goal_title"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:src="@drawable/ic_launcher_background"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/room_calendar"
+                app:layout_constraintDimensionRatio="1:1"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
                 />
 
             <TextView
                 android:id="@+id/txt_amount"
-                app:layout_constraintTop_toBottomOf="@id/img_amount"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:text="30,000원"
+                android:layout_marginTop="8dp"
+                android:textSize="15dp"
+                android:text="0일"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -60,20 +62,19 @@
 
             <ImageView
                 android:id="@+id/img_duration"
-                app:layout_constraintTop_toBottomOf="@id/txt_goal_title"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/img_amount"
-                android:src="@drawable/ic_launcher_background"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/room_money"
+                app:layout_constraintDimensionRatio="1:1"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
                 />
 
             <TextView
                 android:id="@+id/txt_duration"
-                app:layout_constraintTop_toBottomOf="@id/img_amount"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/txt_amount"
-                android:text="0일"
+                android:layout_marginTop="8dp"
+                android:textSize="15dp"
+                android:text="0원"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -89,20 +90,19 @@
 
             <ImageView
                 android:id="@+id/img_user_limit"
-                app:layout_constraintTop_toBottomOf="@id/txt_goal_title"
-                app:layout_constraintStart_toEndOf="@id/img_amount"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:src="@drawable/ic_launcher_background"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/room_people"
+                app:layout_constraintDimensionRatio="1:1"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
                 />
 
             <TextView
                 android:id="@+id/txt_user_limit"
-                app:layout_constraintTop_toBottomOf="@id/img_amount"
-                app:layout_constraintStart_toEndOf="@id/txt_amount"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:text="0/4"
+                android:layout_marginTop="8dp"
+                android:textSize="15dp"
+                android:text="0인"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -114,138 +114,158 @@
 
 
     <TextView
-        android:layout_marginTop="20dp"
-        android:layout_margin="30dp"
         android:id="@+id/txt_description"
-        app:layout_constraintTop_toBottomOf="@id/txt_amount"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:textAlignment="textStart"
-        android:background="#DADADA"
-        android:text="다같이 화이팅"
-        android:padding="16dp"/>
+        android:layout_height="220dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/room_textbox"
+        android:padding="10dp"
+        android:text="임시작성"
+        android:textSize="20dp"
+        />
 
-    <Button
-        android:id="@+id/btn_auth"
-        app:layout_constraintTop_toBottomOf="@id/txt_description"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="인증하기"
-        android:background="@color/colorPrimary"
-        android:textColor="#fff"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/btnJoin"
+        android:layout_marginTop="25dp"
         android:layout_gravity="right"
-        android:layout_marginRight="30dp"/>
+        android:layout_marginRight="30dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/room_authbtn"
+        app:layout_constraintDimensionRatio="1:1"
+        />
 
-    <TextView
-        android:id="@+id/txt_owner"
-        app:layout_constraintTop_toBottomOf="@id/btn_auth"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="방장"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFCC33"></View>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical"
+        >
         <TextView
+            android:id="@+id/txt_owner"
+            android:text="팀장"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="홍삼토익"
-            android:layout_gravity="center_vertical"/>
+            android:orientation="horizontal"
+            android:padding="8dp">
 
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-            android:max="100"
-            android:progress="20"/>
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="홍삼토익"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"/>
 
-    <TextView
-        android:layout_marginTop="8dp"
-        android:id="@+id/txt_joined"
-        app:layout_constraintTop_toBottomOf="@id/btn_auth"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="참여자"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:max="100"
+                android:progress="20"/>
+        </LinearLayout>
         <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
+            android:id="@+id/txt_joined"
+            android:text="참여자"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="오픈핵고통"
-            android:layout_gravity="center_vertical"/>
+            android:orientation="horizontal"
+            android:padding="8dp">
 
-        <ProgressBar
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="오픈핵고통"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"/>
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:max="100"
+                android:progress="50"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-            android:max="100"
-            android:progress="50"/>
-    </LinearLayout>
+            android:orientation="horizontal"
+            android:padding="8dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="오픈핵교통"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"/>
 
-        <TextView
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:max="100"
+                android:progress="75"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="오픈핵고통"
-            android:layout_gravity="center_vertical"/>
+            android:orientation="horizontal"
+            android:padding="8dp">
 
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-            android:max="100"
-            android:progress="75"/>
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="오픈핵교동"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="오픈핵고통"
-            android:layout_gravity="center_vertical"/>
-
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-            android:max="100"
-            android:progress="30"/>
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:max="100"
+                android:progress="30"/>
     </LinearLayout>
 
 
@@ -256,14 +276,12 @@
 
 
     <!--<ProgressBar-->
-        <!--android:id="@+id/progress_owner"-->
-        <!--app:layout_constraintStart_toEndOf="@id/txt_owner"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@id/txt_owner"-->
-        <!--style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:progress="50"-->
-        <!--android:layout_height="wrap_content" />-->
-
-
+    <!--android:id="@+id/progress_owner"-->
+    <!--app:layout_constraintStart_toEndOf="@id/txt_owner"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@id/txt_owner"-->
+    <!--style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:progress="50"-->
+    <!--android:layout_height="wrap_content" />-->
 </LinearLayout>

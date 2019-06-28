@@ -120,9 +120,10 @@
     <SeekBar
         android:id="@+id/moneySeekBar"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="20dp"
         android:max="50"
         android:progress="0"
+        android:layout_marginTop="10dp"
         android:progressDrawable="@drawable/addroom_seekbar_style"
         android:splitTrack="false"
         android:thumb="@drawable/addroom_thumb" />
